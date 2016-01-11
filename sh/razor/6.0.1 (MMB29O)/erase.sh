@@ -17,3 +17,4 @@ fastboot reboot-bootloader
 sleep 5
 fastboot erase userdata
 fastboot reboot-bootloader
+sleep 5
