@@ -11,5 +11,7 @@ This page contains binary image files that allow you to restore your Nexus devic
  - Connect your device to your computer over USB.
  - Open a terminal and navigate to the unzipped system image directory.
  - If necessary, unlock the device's bootloader by running:
-    sh oemunlock.sh
+
+
+     sh oemunlock.sh
 
