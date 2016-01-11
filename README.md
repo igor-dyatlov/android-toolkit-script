@@ -7,3 +7,9 @@ This page contains binary image files that allow you to restore your Nexus devic
  - Original factory firmware
 
 ## Flashing Instructions
+ - Download the appropriate system image for your device below, then unzip it to a safe directory.
+ - Connect your device to your computer over USB.
+ - Open a terminal and navigate to the unzipped system image directory.
+ - If necessary, unlock the device's bootloader by running:
+    sh oemunlock.sh
+
