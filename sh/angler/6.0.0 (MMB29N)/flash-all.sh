@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-fastboot flash bootloader bootloader-hammerhead-hhz12k.img
+fastboot flash bootloader bootloader-angler-angler-02.45.img
 fastboot reboot-bootloader
 sleep 5
-fastboot flash radio radio-hammerhead-m8974a-2.0.50.2.28.img
+fastboot flash radio radio-angler-angler-02.47.img
 fastboot reboot-bootloader
 sleep 5
-fastboot -w update image-hammerhead-mmb29s.zip
+fastboot -w update image-angler-mmb29n.zip
