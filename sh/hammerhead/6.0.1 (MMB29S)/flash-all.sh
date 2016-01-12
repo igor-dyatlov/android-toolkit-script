@@ -14,6 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-fastboot oem lock
+fastboot flash bootloader bootloader-hammerhead-hhz12k.img
 fastboot reboot-bootloader
 sleep 5
+fastboot flash radio radio-hammerhead-m8974a-2.0.50.2.28.img
+fastboot reboot-bootloader
+sleep 5
+fastboot -w update image-hammerhead-mmb29s.zip

@@ -14,6 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-fastboot oem lock
+fastboot erase recovery
 fastboot reboot-bootloader
 sleep 5
+fastboot flash recovery twrp-2.8.7.0-hammerheadcaf.img
+fastboot reboot-bootloader
+sleep 5
+
