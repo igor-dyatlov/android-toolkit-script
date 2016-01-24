@@ -14,6 +14,12 @@ If you love Google services and custom firmware, then this script is for you. It
  - Open a terminal and navigate to the unzipped system image directory.
  - If necessary, unlock the device's bootloader by running:
 
+Run in the console:
 
      sh oemunlock.sh
 
+### Donate
+https://www.paypal.me/IgorDyatlov 
+
+### License
+All files in this project are under the [LICENSE.md](LICENSE.md) license unless otherwise stated in the file or by a dependency's license file.
