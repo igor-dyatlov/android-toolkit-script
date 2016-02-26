@@ -1,0 +1,185 @@
+#!/bin/bash
+
+# Authors:
+#   Igor Dyatlov <dyatlov.igor@gmail.com>
+#
+# Copyright 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Erasing all
+function all {
+    show_info 'Erasing boot...'
+    fastboot erase boot
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    show_info 'Erasing cache...'
+    fastboot erase cache
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    show_info 'Erasing radio...'
+    fastboot erase radio
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    show_info 'Erasing recovery...'
+    fastboot erase recovery
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    show_info 'Erasing system...'
+    fastboot erase system
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    show_info 'Erasing userdata...'
+    fastboot erase userdata
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+    erase
+}
+
+# Erase boot
+function boot {
+    show_info 'Erasing boot...'
+    fastboot erase boot
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+    erase
+}
+
+# Erase cache
+function cache {
+    show_info 'Erasing cache...'
+    fastboot erase cache
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+    erase
+}
+
+# Erase radio
+function radio {
+    show_info 'Erasing radio...'
+    fastboot erase radio
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+    erase
+}
+
+# Erase recovery
+function recovery {
+    show_info 'Erasing recovery...'
+    fastboot erase recovery
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+    erase
+}
+
+# Erase system
+function system {
+    show_info 'Erasing system...'
+    fastboot erase system
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+    erase
+}
+
+# Erase userdata
+function userdata {
+    show_info 'Erasing user data...'
+    fastboot erase userdata
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+    erase
+}
+
+# Erase sections
+function erase {
+    eval `resize`
+    ERASE=$(whiptail \
+        --notags \
+        --title "Erase sections" \
+        --menu "\nWhat would you like to do?" \
+        --ok-button "Erase" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'all'       'Erase all' \
+        'boot'      'Erase boot section' \
+        'cache'     'Erase cache section' \
+        'radio'     'Erase radio' \
+        'recovery'  'Erase recovery section' \
+        'system'    'Erase system' \
+        'userdata'  'Erase userdata' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $ERASE
+    else
+        clear && main
+    fi
+}

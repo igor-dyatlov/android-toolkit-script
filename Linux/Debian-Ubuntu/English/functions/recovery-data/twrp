@@ -1,0 +1,524 @@
+#!/bin/bash
+
+# Authors:
+#   Igor Dyatlov <dyatlov.igor@gmail.com>
+#
+# Copyright 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# TWRP
+function twrp {
+eval `resize`
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    status="0"
+    while [ "$status" -eq 0 ]
+    do
+
+        VERSION=$(whiptail \
+        --title "TeamWin - TWRP" --radiolist \
+        "For what device you want to flash the recovery?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        "ryu"            "Pixel C" OFF \
+        "angler"         "Nexus 6P" OFF \
+        "bullhead"       "Nexus 5X" OFF \
+        "shamu"          "Nexus 6" OFF \
+        "fugu"           "Nexus Player" OFF \
+        "flounder"       "Nexus 9" OFF \
+        "hammerhead"     "Nexus 5" OFF \
+        "hammerheadcaf"  "Nexus 5 (CAF)" OFF \
+        "flo"            "Nexus 7 [2013] (Wi-Fi)" OFF \
+        "deb"            "Nexus 7 [2013] (Mobile)" OFF \
+        "manta"          "Nexus 10" OFF \
+        "mako"           "Nexus 4" OFF \
+        "grouper"        "Nexus 7 (Wi-Fi)" OFF \
+        "tilapia"        "Nexus 7 (Mobile)" OFF \
+        "maguro"         "Galaxy Nexus (GSM/HSPA+)" OFF \
+        "toroplus"       "Galaxy Nexus (Sprint)" OFF \
+        "toro"           "Galaxy Nexus (Verizon)" OFF \
+        3>&1 1>&2 2>&3)
+
+        # Change to lower case and remove spaces.
+        case "${VERSION}" in
+            ryu)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            angler)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/angler/twrp-3.0.0-0-angler.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-angler.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            bullhead)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/bullhead/twrp-3.0.0-0-bullhead.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-bullhead.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            shamu)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/shamu/twrp-3.0.0-0-shamu.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-shamu.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            fugu)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/fugu/twrp-3.0.0-0-fugu.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-fugu.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            flounder)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/flounder/twrp-3.0.0-2-flounder.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-2-flounder.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            hammerhead)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/hammerhead/twrp-3.0.0-0-hammerhead.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-hammerhead.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            hammerheadcaf)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/hammerheadcaf/twrp-3.0.0-0-hammerheadcaf.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-hammerheadcaf.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            flo)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/flo/twrp-3.0.0-0-flo.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-flo.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            deb)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/deb/twrp-3.0.0-0-deb.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-deb.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            manta)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/manta/twrp-3.0.0-1-manta.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-1-manta.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            mako)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/mako/twrp-3.0.0-0-mako.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-mako.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            grouper)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/grouper/twrp-3.0.0-0-grouper.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-3.0.0-0-grouper.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            tilapia)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/tilapia/twrp-2.8.7.0-tilapia.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-2.8.7.0-tilapia.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            maguro)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/maguro/twrp-2.8.7.0-maguro.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-2.8.7.0-maguro.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            toroplus)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/toroplus/twrp-2.8.7.0-toroplus.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-2.8.7.0-toroplus.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            toro)
+              # Download
+              show_info 'Download the latest TWRP image...'
+              curl -O https://dl.twrp.me/toro/twrp-2.8.7.0-toro.img
+              # Erasing old recovery
+	            show_warning 'Erasing old recovery...'
+              fastboot erase recovery
+	            show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              show_info 'Flashing recovery...'
+              fastboot flash recovery twrp-2.8.7.0-toro.img
+              show_success 'Done.'
+              # Reboot bootloader
+              show_warning 'Devices rebooting'
+              fastboot reboot-bootloader
+              # Timeout
+              sleep 5
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              recovery
+            ;;
+            *) status=1
+              recovery
+            ;;
+        esac
+        exitstatus1=$status1
+    done
+else
+    clear && recovery
+fi
+}
