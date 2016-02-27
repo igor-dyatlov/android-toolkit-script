@@ -1,0 +1,81 @@
+#!/bin/bash
+
+# Authors:
+#   Igor Dyatlov <dyatlov.igor@gmail.com>
+#
+# Copyright 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Nexus 5X
+function bullhead {
+eval `resize`
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    status="0"
+    while [ "$status" -eq 0 ]
+    do
+
+        VERSION=$(whiptail \
+        --title "Nexus 5X" --radiolist \
+        "For what device you want to flash the recovery?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        "MDB08M"         "Marshmallow 6.0.0" ON \
+        "MMB29Q"         "Marshmallow 6.0.1" ON \
+
+        3>&1 1>&2 2>&3)
+
+        # Change to lower case and remove spaces.
+        case "${VERSION}" in
+            MDB08M)
+              # Download
+              show_info 'Download Factory Images...'
+              curl -O https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-5867cc27.tgz
+              show_info 'Extraction Factory Images...'
+            	tar zxf bullhead*.tgz
+              show_info 'Install Factory Images...'
+              show_warning ' '
+              cd bullhead-mdb08m
+              ./flash-all.sh
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              images
+            ;;
+            MMB29Q)
+              # Download
+              show_info 'Download ...'
+              curl -O https://dl.google.com/dl/android/aosp/bullhead-mmb29q-factory-197bd207.tgz
+              show_info 'Extraction f...'
+            	tar zxf bullhead*.tgz
+              cd bullhead-mmb29q
+              ./flash-all.sh
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              images
+            ;;
+            *) status=1
+              images
+            ;;
+        esac
+        exitstatus1=$status1
+    done
+else
+    clear && images
+fi
+}
