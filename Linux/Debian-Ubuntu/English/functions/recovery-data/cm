@@ -1,1 +1,464 @@
 #!/bin/bash
+
+# Authors:
+#   Igor Dyatlov <dyatlov.igor@gmail.com>
+#
+# Copyright 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+function cm-ryu {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+# Nexus 6P
+function cm-angler {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download.cyanogenmod.org/get/angler-latest-recovery.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery cm-13.0-*-NIGHTLY-angler-recovery.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+# Nexus 5X
+function twrp-bullhead {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/bullhead/twrp-3.0.0-0-bullhead.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-0-bullhead.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+# Nexus 6
+function cm-shamu {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/shamu/twrp-3.0.0-0-shamu.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-0-shamu.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function twrp-fugu {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/fugu/twrp-3.0.0-0-fugu.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-0-fugu.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function twrp-flounder {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/flounder/twrp-3.0.0-2-flounder.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-2-flounder.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+# Nexus 5
+function cm-hammerhead {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download.cyanogenmod.org/get/hammerhead-latest-recovery.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery cm-13.0-*-NIGHTLY-hammerhead-recovery.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+# Nexus 5 CAF
+function cm-hammerheadcaf {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download.cyanogenmod.org/get/hammerheadcaf-latest-recovery.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery cm-13.0-*-NIGHTLY-hammerheadcaf-recovery.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+# Nexus 7
+function cm-flo {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/flo/twrp-3.0.0-0-flo.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-0-flo.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function twrp-deb {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/deb/twrp-3.0.0-0-deb.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-0-deb.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function twrp-manta {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/manta/twrp-3.0.0-1-manta.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-1-manta.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function twrp-mako {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/mako/twrp-3.0.0-0-mako.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-0-mako.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function twrp-grouper {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/grouper/twrp-3.0.0-0-grouper.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-3.0.0-0-grouper.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function twrp-tilapia {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O https://dl.twrp.me/tilapia/twrp-2.8.7.0-tilapia.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery twrp-2.8.7.0-tilapia.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function twrp-maguro {
+  # Download
+  show_info 'Download Latest Nightly Recovery...'
+  curl -O http://download.cyanogenmod.org/get/maguro-latest-recovery.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery cm-12.1-*.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+# TWRP
+function cm {
+    eval `resize`
+    CM=$(whiptail \
+        --notags \
+        --title "TeamWin - TWRP" \
+        --menu "\nFor what device you want to flash the recovery?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        "cm-ryu"            "Pixel C" \
+        "cm-angler"         "Nexus 6P" \
+        "cm-bullhead"       "Nexus 5X" \
+        "cm-shamu"          "Nexus 6" \
+        "cm-fugu"           "Nexus Player" \
+        "cm-flounder"       "Nexus 9" \
+        "cm-hammerhead"     "Nexus 5" \
+        "cm-hammerheadcaf"  "Nexus 5 (CAF)" \
+        "cm-flo"            "Nexus 7 [2013] (Wi-Fi)" \
+        "cm-deb"            "Nexus 7 [2013] (Mobile)" \
+        "cm-manta"          "Nexus 10" \
+        "cm-mako"           "Nexus 4" \
+        "cm-grouper"        "Nexus 7 (Wi-Fi)" \
+        "cm-tilapia"        "Nexus 7 (Mobile)" \
+        "cm-maguro"         "Galaxy Nexus (GSM/HSPA+)" \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $CM
+    else
+        clear && main
+    fi
+}
