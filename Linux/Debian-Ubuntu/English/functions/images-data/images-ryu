@@ -17,8 +17,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Nexus 6P
-function angler {
+# Pixel C
+function images-ryu {
 eval `resize`
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
@@ -27,41 +27,26 @@ if [ $exitstatus = 0 ]; then
     do
 
         VERSION=$(whiptail \
-        --title "Nexus 6P" --radiolist \
+        --title "Pixel C" --radiolist \
         "For what device you want to flash the recovery?" \
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        "MMB29N"         "Marshmallow 6.0.0" ON \
-        "MMB29Q"         "Marshmallow 6.0.1" ON \
+        "MXB48T"         "Marshmallow 6.0.1" ON \
 
         3>&1 1>&2 2>&3)
 
         # Change to lower case and remove spaces.
         case "${VERSION}" in
-            MMB29N)
+            MXB48T)
               # Download
               show_info 'Download Factory Images...'
-              curl -O https://dl.google.com/dl/android/aosp/angler-mmb29n-factory-b1463752.tgz
+              curl -O https://dl.google.com/dl/android/aosp/ryu-mxb48t-factory-43820b34.tgz
               show_info 'Extraction Factory Images...'
-            	tar zxf angler*.tgz
+            	tar zxf ryu*.tgz
               show_info 'Install Factory Images...'
               show_warning ' '
-              cd angler-mmb29n
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            MMB29Q)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/angler-mmb29q-factory-239acdde.tgz
-              show_info 'Extraction f...'
-            	tar zxf angler*.tgz
-              cd angler-mmb29q
+              cd ryu-mxb48t
               ./flash-all.sh
               # Done
               show_success 'Done.'

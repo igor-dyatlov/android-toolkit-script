@@ -18,7 +18,7 @@
 # limitations under the License.
 
 # Nexus 7
-function razor {
+function images-razor {
 eval `resize`
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
@@ -39,7 +39,7 @@ if [ $exitstatus = 0 ]; then
         "LRX22G"         "Lollipop 5.0.2" OFF \
         "LMY48T"         "Lollipop 5.1.1" OFF \
         "MRA58V"         "Marshmallow 6.0" OFF \
-        "MMB29Q"         "Marshmallow 6.0.1" OFF \
+        "MMB29Q"         "Marshmallow 6.0.1" ON \
 
         3>&1 1>&2 2>&3)
 

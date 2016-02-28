@@ -2,22 +2,22 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/images-data/angler
-source $dir/functions/images-data/bullhead
-source $dir/functions/images-data/fugu
-source $dir/functions/images-data/hammerhead
-source $dir/functions/images-data/mantaray
-source $dir/functions/images-data/nakasi
-source $dir/functions/images-data/nakasig
-source $dir/functions/images-data/occam
-source $dir/functions/images-data/razor
-source $dir/functions/images-data/razorg
-source $dir/functions/images-data/ryu
-source $dir/functions/images-data/shamu
-source $dir/functions/images-data/takju
-source $dir/functions/images-data/volantis
-source $dir/functions/images-data/volantisg
-source $dir/functions/images-data/yakju
+source $dir/functions/images-data/images-angler
+source $dir/functions/images-data/images-bullhead
+source $dir/functions/images-data/images-fugu
+source $dir/functions/images-data/images-hammerhead
+source $dir/functions/images-data/images-mantaray
+source $dir/functions/images-data/images-nakasi
+source $dir/functions/images-data/images-nakasig
+source $dir/functions/images-data/images-occam
+source $dir/functions/images-data/images-razor
+source $dir/functions/images-data/images-razorg
+source $dir/functions/images-data/images-ryu
+source $dir/functions/images-data/images-shamu
+source $dir/functions/images-data/images-takju
+source $dir/functions/images-data/images-volantis
+source $dir/functions/images-data/images-volantisg
+source $dir/functions/images-data/images-yakju
 
 # Authors:
 #   Igor Dyatlov <dyatlov.igor@gmail.com>

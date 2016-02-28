@@ -1,0 +1,317 @@
+#!/bin/bash
+
+# Authors:
+#   Igor Dyatlov <dyatlov.igor@gmail.com>
+#
+# Copyright 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+function cwm-hammerhead {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.5-hammerhead.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.5-hammerhead.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-flo {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.7-flo.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.7-flo.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-deb {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.8-deb.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.8-deb.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-manta {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.7-manta.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.7-manta.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-mako {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.7-mako.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.7-mako.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-grouper {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.3-grouper.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.3-grouper.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-tilapia {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.3-tilapia.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.3-tilapia.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-maguro {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.7-maguro.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.7-maguro.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-toroplus {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.3-toroplus.img
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.3-toroplus.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cwm-toro {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.3-toro.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery recovery-clockwork-touch-6.0.4.3-toro.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+# CWM
+function cwm {
+    eval `resize`
+    CWM=$(whiptail \
+        --notags \
+        --title "ClockWorkMod - CWM" \
+        --menu "\nFor what device you want to flash the recovery?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        "cwm-hammerhead"     "Nexus 5" \
+        "cwm-flo"            "Nexus 7 [2013] (Wi-Fi)" \
+        "cwm-deb"            "Nexus 7 [2013] (Mobile)" \
+        "cwm-manta"          "Nexus 10" \
+        "cwm-mako"           "Nexus 4" \
+        "cwm-grouper"        "Nexus 7 (Wi-Fi)" \
+        "cwm-tilapia"        "Nexus 7 (Mobile)" \
+        "cwm-maguro"         "Galaxy Nexus (GSM/HSPA+)" \
+        "cwm-toroplus"       "Galaxy Nexus (Sprint)" \
+        "cwm-toro"           "Galaxy Nexus (Verizon)" \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $CWM
+    else
+        clear && main
+    fi
+}

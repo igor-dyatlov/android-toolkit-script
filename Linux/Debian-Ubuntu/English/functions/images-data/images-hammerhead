@@ -17,8 +17,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Nexus Player
-function fugu {
+# Nexus 5
+function images-hammerhead {
 eval `resize`
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
@@ -27,29 +27,31 @@ if [ $exitstatus = 0 ]; then
     do
 
         VERSION=$(whiptail \
-        --title "Nexus Player" --radiolist \
+        --title "Nexus 5" --radiolist \
         "For what device you want to flash the recovery?" \
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        "LRX21V"         "Lollipop 5.0" OFF \
-        "LMY48N"         "Lollipop 5.1.1" OFF \
+        "KRT16M"         "KitKat 4.4" OFF \
+        "KTU84P"         "KitKat 4.4.4" OFF \
+        "LRX21O"         "Lollipop 5.0" OFF \
+        "LMY48M"         "Lollipop 5.1.1" OFF \
         "MRA58N"         "Marshmallow 6.0.0" OFF \
-        "MMB29U"         "Marshmallow 6.0.1" OFF \
+        "MMB29Q"         "Marshmallow 6.0.1" ON \
 
         3>&1 1>&2 2>&3)
 
         # Change to lower case and remove spaces.
         case "${VERSION}" in
-            LRX21V)
+            KRT16M)
               # Download
               show_info 'Download Factory Images...'
-              curl -O https://dl.google.com/dl/android/aosp/fugu-lrx21v-factory-64050f47.tgz
+              curl -O https://dl.google.com/dl/android/aosp/hammerhead-krt16m-factory-bd9c39de.tgz
               show_info 'Extraction Factory Images...'
-            	tar zxf fugu*.tgz
+            	tar zxf hammerhead*.tgz
               show_info 'Install Factory Images...'
               show_warning ' '
-              cd fugu-lrx21v
+              cd hammerhead-krt16m
               ./flash-all.sh
               # Done
               show_success 'Done.'
@@ -57,13 +59,41 @@ if [ $exitstatus = 0 ]; then
               status=1
               images
             ;;
-            LMY48N)
+            KTU84P)
               # Download
               show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/fugu-lmy48n-factory-3b9d8638.tgz
+              curl -O https://dl.google.com/dl/android/aosp/hammerhead-ktu84p-factory-35ea0277.tgz
               show_info 'Extraction f...'
-            	tar zxf fugu*.tgz
-              cd fugu-lmy48n
+            	tar zxf hammerhead*.tgz
+              cd hammerhead-ktu84p
+              ./flash-all.sh
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              images
+            ;;
+            LRX21O)
+              # Download
+              show_info 'Download ...'
+              curl -O https://dl.google.com/dl/android/aosp/hammerhead-lrx21o-factory-01315e08.tgz
+              show_info 'Extraction f...'
+              tar zxf hammerhead*.tgz
+              cd hammerhead-lrx21o
+              ./flash-all.sh
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              images
+            ;;
+            LMY48M)
+              # Download
+              show_info 'Download ...'
+              curl -O https://dl.google.com/dl/android/aosp/hammerhead-lmy48m-factory-bf3c82fd.tgz
+              show_info 'Extraction f...'
+              tar zxf hammerhead*.tgz
+              cd hammerhead-lmy48m
               ./flash-all.sh
               # Done
               show_success 'Done.'
@@ -74,10 +104,10 @@ if [ $exitstatus = 0 ]; then
             MRA58N)
               # Download
               show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/fugu-mra58n-factory-8517d819.tgz
+              curl -O https://dl.google.com/dl/android/aosp/hammerhead-mra58n-factory-aeca4139.tgz
               show_info 'Extraction f...'
-              tar zxf fugu*.tgz
-              cd fugu-mra58n
+              tar zxf hammerhead*.tgz
+              cd hammerhead-mra58n
               ./flash-all.sh
               # Done
               show_success 'Done.'
@@ -85,13 +115,14 @@ if [ $exitstatus = 0 ]; then
               status=1
               images
             ;;
-            MMB29U)
+            MMB29Q)
               # Download
               show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/fugu-mmb29u-factory-7ce497cb.tgz
+              curl -O https://dl.google.com/dl/android/aosp/hammerhead-mmb29q-factory-6356d31e.tgz
               show_info 'Extraction f...'
-              tar zxf fugu*.tgz
-              cd fugu-mmb29u
+              tar zxf hammerhead*.tgz
+              show_info '...'
+              cd hammerhead-mmb29q
               ./flash-all.sh
               # Done
               show_success 'Done.'

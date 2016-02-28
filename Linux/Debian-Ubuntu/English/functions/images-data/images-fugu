@@ -17,8 +17,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Nexus 5X
-function bullhead {
+# Nexus Player
+function images-fugu {
 eval `resize`
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
@@ -27,27 +27,29 @@ if [ $exitstatus = 0 ]; then
     do
 
         VERSION=$(whiptail \
-        --title "Nexus 5X" --radiolist \
+        --title "Nexus Player" --radiolist \
         "For what device you want to flash the recovery?" \
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        "MDB08M"         "Marshmallow 6.0.0" ON \
-        "MMB29Q"         "Marshmallow 6.0.1" ON \
+        "LRX21V"         "Lollipop 5.0" OFF \
+        "LMY48N"         "Lollipop 5.1.1" OFF \
+        "MRA58N"         "Marshmallow 6.0.0" OFF \
+        "MMB29U"         "Marshmallow 6.0.1" ON \
 
         3>&1 1>&2 2>&3)
 
         # Change to lower case and remove spaces.
         case "${VERSION}" in
-            MDB08M)
+            LRX21V)
               # Download
               show_info 'Download Factory Images...'
-              curl -O https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-5867cc27.tgz
+              curl -O https://dl.google.com/dl/android/aosp/fugu-lrx21v-factory-64050f47.tgz
               show_info 'Extraction Factory Images...'
-            	tar zxf bullhead*.tgz
+            	tar zxf fugu*.tgz
               show_info 'Install Factory Images...'
               show_warning ' '
-              cd bullhead-mdb08m
+              cd fugu-lrx21v
               ./flash-all.sh
               # Done
               show_success 'Done.'
@@ -55,13 +57,41 @@ if [ $exitstatus = 0 ]; then
               status=1
               images
             ;;
-            MMB29Q)
+            LMY48N)
               # Download
               show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/bullhead-mmb29q-factory-197bd207.tgz
+              curl -O https://dl.google.com/dl/android/aosp/fugu-lmy48n-factory-3b9d8638.tgz
               show_info 'Extraction f...'
-            	tar zxf bullhead*.tgz
-              cd bullhead-mmb29q
+            	tar zxf fugu*.tgz
+              cd fugu-lmy48n
+              ./flash-all.sh
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              images
+            ;;
+            MRA58N)
+              # Download
+              show_info 'Download ...'
+              curl -O https://dl.google.com/dl/android/aosp/fugu-mra58n-factory-8517d819.tgz
+              show_info 'Extraction f...'
+              tar zxf fugu*.tgz
+              cd fugu-mra58n
+              ./flash-all.sh
+              # Done
+              show_success 'Done.'
+              whiptail --title "Finished" --msgbox "Installation complete." 8 78
+              status=1
+              images
+            ;;
+            MMB29U)
+              # Download
+              show_info 'Download ...'
+              curl -O https://dl.google.com/dl/android/aosp/fugu-mmb29u-factory-7ce497cb.tgz
+              show_info 'Extraction f...'
+              tar zxf fugu*.tgz
+              cd fugu-mmb29u
               ./flash-all.sh
               # Done
               show_success 'Done.'

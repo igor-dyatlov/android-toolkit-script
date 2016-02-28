@@ -3,6 +3,7 @@
 dir="$(dirname "$0")"
 
 source $dir/functions/recovery-data/cm
+source $dir/functions/recovery-data/cwm
 source $dir/functions/recovery-data/stock
 source $dir/functions/recovery-data/twrp
 
@@ -33,9 +34,10 @@ function recovery {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'cm'        '' \
-        'stock'     '' \
-        'twrp'      '' \
+        'cm'        'Cyanogen Recovery' \
+        'cwm'       'CWM Recovery' \
+        'stock'     'Stock Recovery' \
+        'twrp'      'TWRP Recovery' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
