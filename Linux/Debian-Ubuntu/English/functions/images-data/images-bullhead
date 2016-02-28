@@ -17,65 +17,54 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+function MDB08M {
+  # Download
+  show_info 'Download Factory Images...'
+  curl -O https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-5867cc27.tgz
+  show_info 'Extraction Factory Images...'
+  tar zxf bullhead*.tgz
+  show_info 'Install Factory Images...'
+  show_warning ' '
+  cd bullhead-mdb08m
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function MMB29Q {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/bullhead-mmb29q-factory-197bd207.tgz
+  show_info 'Extraction f...'
+  tar zxf bullhead*.tgz
+  cd bullhead-mmb29q
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
 # Nexus 5X
 function images-bullhead {
-eval `resize`
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
-    status="0"
-    while [ "$status" -eq 0 ]
-    do
-
-        VERSION=$(whiptail \
-        --title "Nexus 5X" --radiolist \
-        "For what device you want to flash the recovery?" \
+    eval `resize`
+    NEXUS5X=$(whiptail \
+        --notags \
+        --title "Nexus 5X" \
+        --menu "\nFor what device you want to flash the recovery?" \
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        "MDB08M"         "Marshmallow 6.0.0" OFF \
-        "MMB29Q"         "Marshmallow 6.0.1" ON \
-
+        "MDB08M"         "Marshmallow 6.0.0" \
+        "MMB29Q"         "Marshmallow 6.0.1" \
         3>&1 1>&2 2>&3)
 
-        # Change to lower case and remove spaces.
-        case "${VERSION}" in
-            MDB08M)
-              # Download
-              show_info 'Download Factory Images...'
-              curl -O https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-5867cc27.tgz
-              show_info 'Extraction Factory Images...'
-            	tar zxf bullhead*.tgz
-              show_info 'Install Factory Images...'
-              show_warning ' '
-              cd bullhead-mdb08m
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            MMB29Q)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/bullhead-mmb29q-factory-197bd207.tgz
-              show_info 'Extraction f...'
-            	tar zxf bullhead*.tgz
-              cd bullhead-mmb29q
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            *) status=1
-              images
-            ;;
-        esac
-        exitstatus1=$status1
-    done
-else
-    clear && images
-fi
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $NEXUS5X
+    else
+        clear && main
+    fi
 }
