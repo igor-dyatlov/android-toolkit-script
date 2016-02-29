@@ -17,158 +17,147 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+function razor-JSS15R {
+  # Download
+  show_info 'Download Factory Images...'
+  curl -O https://dl.google.com/dl/android/aosp/razor-jss15r-factory-ec2d4f76.tgz
+  show_info 'Extraction Factory Images...'
+  tar zxf razor*.tgz
+  show_info 'Install Factory Images...'
+  show_warning ' '
+  cd razor-jss15r
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function razor-KRT16S {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/razor-krt16s-factory-7235eb0d.tgz
+  show_info 'Extraction f...'
+  tar zxf razor*.tgz
+  cd razor-krt16s
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function razor-KTU84P {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/razor-ktu84p-factory-b1b2c0da.tgz
+  show_info 'Extraction f...'
+  tar zxf razor*.tgz
+  cd razor-ktu84p
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function razor-LRX21P {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/razor-lrx21p-factory-ba55c6ab.tgz
+  show_info 'Extraction f...'
+  tar zxf razor*.tgz
+  cd razor-lrx21p
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function razor-LRX22G {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/razor-lrx22g-factory-bff2093e.tgz
+  show_info 'Extraction f...'
+  tar zxf razor*.tgz
+  cd razor-lrx22g
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function razor-LMY48T {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/razor-lmy48t-factory-b6a844f2.tgz
+  show_info 'Extraction f...'
+  tar zxf razor*.tgz
+  show_info '...'
+  cd razor-lmy48t
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function razor-MRA58V {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/razor-mra58v-factory-45d0421b.tgz
+  show_info 'Extraction f...'
+  tar zxf razor*.tgz
+  show_info '...'
+  cd razor-mra58v
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function razor-MMB29Q {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/razor-mmb29q-factory-0fe7279d.tgz
+  show_info 'Extraction f...'
+  tar zxf razor*.tgz
+  show_info '...'
+  cd razor-mmb29q
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
 # Nexus 7
 function images-razor {
-eval `resize`
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
-    status="0"
-    while [ "$status" -eq 0 ]
-    do
-
-        VERSION=$(whiptail \
-        --title "Nexus 7" --radiolist \
-        "For what device you want to flash the recovery?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        "JSS15R"         "Jelly Bean 4.3" OFF \
-        "KRT16S"         "KitKat 4.4" OFF \
-        "KTU84P"         "KitKat 4.4.4" OFF \
-        "LRX21P"         "Lollipop 5.0" OFF \
-        "LRX22G"         "Lollipop 5.0.2" OFF \
-        "LMY48T"         "Lollipop 5.1.1" OFF \
-        "MRA58V"         "Marshmallow 6.0" OFF \
-        "MMB29Q"         "Marshmallow 6.0.1" ON \
-
+  eval `resize`
+  NEXUS7=$(whiptail \
+      --notags \
+      --title "Nexus 7" \
+      --menu "\nFor what device you want to flash the recovery?" \
+      --ok-button "Install" \
+      --cancel-button "Go Back" \
+      $LINES $COLUMNS $(( $LINES - 12 )) \
+        "razor-JSS15R"         "Jelly Bean 4.3" \
+        "razor-KRT16S"         "KitKat 4.4" \
+        "razor-KTU84P"         "KitKat 4.4.4" \
+        "razor-LRX21P"         "Lollipop 5.0" \
+        "razor-LRX22G"         "Lollipop 5.0.2" \
+        "razor-LMY48T"         "Lollipop 5.1.1" \
+        "razor-MRA58V"         "Marshmallow 6.0" \
+        "razor-MMB29Q"         "Marshmallow 6.0.1" \
         3>&1 1>&2 2>&3)
 
-        # Change to lower case and remove spaces.
-        case "${VERSION}" in
-            JSS15R)
-              # Download
-              show_info 'Download Factory Images...'
-              curl -O https://dl.google.com/dl/android/aosp/razor-jss15r-factory-ec2d4f76.tgz
-              show_info 'Extraction Factory Images...'
-            	tar zxf razor*.tgz
-              show_info 'Install Factory Images...'
-              show_warning ' '
-              cd razor-jss15r
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            KRT16S)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/razor-krt16s-factory-7235eb0d.tgz
-              show_info 'Extraction f...'
-            	tar zxf razor*.tgz
-              cd razor-krt16s
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            KTU84P)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/razor-ktu84p-factory-b1b2c0da.tgz
-              show_info 'Extraction f...'
-              tar zxf razor*.tgz
-              cd razor-ktu84p
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            LRX21P)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/razor-lrx21p-factory-ba55c6ab.tgz
-              show_info 'Extraction f...'
-              tar zxf razor*.tgz
-              cd razor-lrx21p
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            LRX22G)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/razor-lrx22g-factory-bff2093e.tgz
-              show_info 'Extraction f...'
-              tar zxf razor*.tgz
-              cd razor-lrx22g
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            LMY48T)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/razor-lmy48t-factory-b6a844f2.tgz
-              show_info 'Extraction f...'
-              tar zxf razor*.tgz
-              show_info '...'
-              cd razor-lmy48t
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            MRA58V)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/razor-mra58v-factory-45d0421b.tgz
-              show_info 'Extraction f...'
-              tar zxf razor*.tgz
-              show_info '...'
-              cd razor-mra58v
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            MMB29Q)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/razor-mmb29q-factory-0fe7279d.tgz
-              show_info 'Extraction f...'
-              tar zxf razor*.tgz
-              show_info '...'
-              cd razor-mmb29q
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            *) status=1
-              images
-            ;;
-        esac
-        exitstatus1=$status1
-    done
-else
-    clear && images
-fi
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $NEXUS7
+    else
+        clear && main
+    fi
 }

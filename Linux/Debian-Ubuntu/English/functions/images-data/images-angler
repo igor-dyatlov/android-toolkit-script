@@ -49,33 +49,22 @@ function angler-MMB29Q {
 
 # Nexus 6P
 function images-angler {
-eval `resize`
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
-    status="0"
-    while [ "$status" -eq 0 ]
-    do
-
-        VERSION=$(whiptail \
-        --title "Nexus 6P" --radiolist \
-        "For what device you want to flash the recovery?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        "angler-MMB29N"         "Marshmallow 6.0.0" OFF \
-        "angler-MMB29Q"         "Marshmallow 6.0.1" ON \
-
+  eval `resize`
+  NEXUS6P=$(whiptail \
+      --notags \
+      --title "Nexus 5X" \
+      --menu "\nFor what device you want to flash the recovery?" \
+      --ok-button "Install" \
+      --cancel-button "Go Back" \
+      $LINES $COLUMNS $(( $LINES - 12 )) \
+        "angler-MMB29N"         "Marshmallow 6.0.0" \
+        "angler-MMB29Q"         "Marshmallow 6.0.1" \
         3>&1 1>&2 2>&3)
 
-
-
-            *) status=1
-              images
-            ;;
-        esac
-        exitstatus1=$status1
-    done
-else
-    clear && images
-fi
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $NEXUS6P
+    else
+        clear && main
+    fi
 }

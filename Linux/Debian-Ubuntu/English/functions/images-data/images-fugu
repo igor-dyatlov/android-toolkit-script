@@ -17,95 +17,84 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+function fugu-LRX21V {
+  # Download
+  show_info 'Download Factory Images...'
+  curl -O https://dl.google.com/dl/android/aosp/fugu-lrx21v-factory-64050f47.tgz
+  show_info 'Extraction Factory Images...'
+  tar zxf fugu*.tgz
+  show_info 'Install Factory Images...'
+  show_warning ' '
+  cd fugu-lrx21v
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function fugu-LMY48N {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/fugu-lmy48n-factory-3b9d8638.tgz
+  show_info 'Extraction f...'
+  tar zxf fugu*.tgz
+  cd fugu-lmy48n
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function fugu-MRA58N {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/fugu-mra58n-factory-8517d819.tgz
+  show_info 'Extraction f...'
+  tar zxf fugu*.tgz
+  cd fugu-mra58n
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+function fugu-MMB29U {
+  # Download
+  show_info 'Download ...'
+  curl -O https://dl.google.com/dl/android/aosp/fugu-mmb29u-factory-7ce497cb.tgz
+  show_info 'Extraction f...'
+  tar zxf fugu*.tgz
+  cd fugu-mmb29u
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
 # Nexus Player
 function images-fugu {
-eval `resize`
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
-    status="0"
-    while [ "$status" -eq 0 ]
-    do
-
-        VERSION=$(whiptail \
-        --title "Nexus Player" --radiolist \
-        "For what device you want to flash the recovery?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        "LRX21V"         "Lollipop 5.0" OFF \
-        "LMY48N"         "Lollipop 5.1.1" OFF \
-        "MRA58N"         "Marshmallow 6.0.0" OFF \
-        "MMB29U"         "Marshmallow 6.0.1" ON \
-
+  eval `resize`
+  NEXUSPLAY=$(whiptail \
+      --notags \
+      --title "Nexus Player" \
+      --menu "\nFor what device you want to flash the recovery?" \
+      --ok-button "Install" \
+      --cancel-button "Go Back" \
+      $LINES $COLUMNS $(( $LINES - 12 )) \
+        "fugu-LRX21V"         "Lollipop 5.0" \
+        "fugu-LMY48N"         "Lollipop 5.1.1" \
+        "fugu-MRA58N"         "Marshmallow 6.0.0" \
+        "fugu-MMB29U"         "Marshmallow 6.0.1" \
         3>&1 1>&2 2>&3)
 
-        # Change to lower case and remove spaces.
-        case "${VERSION}" in
-            LRX21V)
-              # Download
-              show_info 'Download Factory Images...'
-              curl -O https://dl.google.com/dl/android/aosp/fugu-lrx21v-factory-64050f47.tgz
-              show_info 'Extraction Factory Images...'
-            	tar zxf fugu*.tgz
-              show_info 'Install Factory Images...'
-              show_warning ' '
-              cd fugu-lrx21v
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            LMY48N)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/fugu-lmy48n-factory-3b9d8638.tgz
-              show_info 'Extraction f...'
-            	tar zxf fugu*.tgz
-              cd fugu-lmy48n
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            MRA58N)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/fugu-mra58n-factory-8517d819.tgz
-              show_info 'Extraction f...'
-              tar zxf fugu*.tgz
-              cd fugu-mra58n
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            MMB29U)
-              # Download
-              show_info 'Download ...'
-              curl -O https://dl.google.com/dl/android/aosp/fugu-mmb29u-factory-7ce497cb.tgz
-              show_info 'Extraction f...'
-              tar zxf fugu*.tgz
-              cd fugu-mmb29u
-              ./flash-all.sh
-              # Done
-              show_success 'Done.'
-              whiptail --title "Finished" --msgbox "Installation complete." 8 78
-              status=1
-              images
-            ;;
-            *) status=1
-              images
-            ;;
-        esac
-        exitstatus1=$status1
-    done
-else
-    clear && images
-fi
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $NEXUSPLAY
+    else
+        clear && main
+    fi
 }
