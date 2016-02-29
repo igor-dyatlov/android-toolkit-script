@@ -19,17 +19,32 @@
 
 # OEM Lock
 function oemlock {
-    show_info 'Locking...'
-    fastboot oem lock
-    # Reboot bootloader
-    show_warning 'Devices rebooting'
-    fastboot reboot-bootloader
-    # Timeout
-    sleep 5
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "The bootloader is locked." 8 78
-    oem
+  show_info 'Locking...'
+  fastboot oem lock
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "The bootloader is locked." 8 78
+  oem
+}
+
+# Lock
+function flashing-lock {
+  show_info 'Locking...'
+  fastboot flashing lock
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "The bootloader is locked." 8 78
+  oem
 }
 
 # OEM Unlock
@@ -48,8 +63,23 @@ function oemunlock {
     oem
 }
 
+# Unlock
+function flashing-unlock {
+    show_info 'Unlocking...'
+    show_warning 'Confirm the action on your Nexus'
+    fastboot flashing unlock
+    # Reboot bootloader
+    show_warning 'Devices rebooting'
+    fastboot reboot-bootloader
+    # Timeout
+    sleep 5
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "The bootloader is unlocked." 8 78
+    oem
+}
 # OEM Lock/Unlock
-function oem {
+function  {
     eval `resize`
     OEM=$(whiptail \
         --notags \
