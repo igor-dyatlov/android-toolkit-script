@@ -79,7 +79,7 @@ function flashing-unlock {
   bootloader
 }
 # OEM Lock/Unlock
-function  {
+function bootloader {
     eval `resize`
     BOOT=$(whiptail \
         --notags \

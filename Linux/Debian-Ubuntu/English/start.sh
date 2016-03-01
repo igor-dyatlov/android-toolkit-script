@@ -25,10 +25,10 @@ clear
 
 dir="$(dirname "$0")"
 
+. $dir/functions/bootloader
 . $dir/functions/check
 . $dir/functions/erase
 . $dir/functions/images
-. $dir/functions/bootloader
 . $dir/functions/recovery
 . $dir/functions/search
 
