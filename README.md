@@ -19,7 +19,7 @@ And also, this tool allows you to set custom recovery, lock/unlock bootloader an
 ## Flashing Instructions
  - Download the script
 
- Run in the console:
+Run in the console:
 
     git clone https://github.com/igor-dyatlov/nexus-fastboot-script.git
 
