@@ -17,6 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Pixel C
 function cm-ryu {
   # Download
   show_info 'Download Latest Nightly Recovery...'
@@ -73,7 +74,7 @@ function cm-angler {
 }
 
 # Nexus 5X
-function twrp-bullhead {
+function cm-bullhead {
   # Download
   show_info 'Download Latest Nightly Recovery...'
   curl -O http://download.cyanogenmod.org/get/bullhead-latest-recovery.img
@@ -128,7 +129,8 @@ function cm-shamu {
   recovery
 }
 
-function twrp-fugu {
+# Nexus Player
+function cm-fugu {
   # Download
   show_info 'Download Latest Nightly Recovery...'
   curl -O http://download.cyanogenmod.org/get/fugu-latest-recovery.img
@@ -155,6 +157,7 @@ function twrp-fugu {
   recovery
 }
 
+# Nexus 9
 function cm-flounder {
   # Download
   show_info 'Download Latest Nightly Recovery...'
@@ -182,6 +185,7 @@ function cm-flounder {
   recovery
 }
 
+# Nexus 9
 function cm-flounder-lte {
   # Download
   show_info 'Download Latest Nightly Recovery...'
@@ -293,10 +297,11 @@ function cm-flo {
   recovery
 }
 
-function twrp-deb {
+# Nexus 7
+function cm-deb {
   # Download
   show_info 'Download Latest Nightly Recovery...'
-  curl -O https://dl.twrp.me/deb/twrp-3.0.0-0-deb.img
+  curl -O http://download.cyanogenmod.org/get/deb-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -307,7 +312,7 @@ function twrp-deb {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-0-deb.img
+  fastboot flash recovery cm-13.0-*-NIGHTLY-deb-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -320,10 +325,11 @@ function twrp-deb {
   recovery
 }
 
-function twrp-manta {
+# Nexus 10
+function cm-manta {
   # Download
   show_info 'Download Latest Nightly Recovery...'
-  curl -O https://dl.twrp.me/manta/twrp-3.0.0-1-manta.img
+  curl -O http://download.cyanogenmod.org/get/manta-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -334,7 +340,7 @@ function twrp-manta {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-1-manta.img
+  fastboot flash recovery cm-13.0-*-NIGHTLY-manta-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -347,10 +353,11 @@ function twrp-manta {
   recovery
 }
 
-function twrp-mako {
+# Nexus 4
+function cm-mako {
   # Download
   show_info 'Download Latest Nightly Recovery...'
-  curl -O https://dl.twrp.me/mako/twrp-3.0.0-0-mako.img
+  curl -O http://download.cyanogenmod.org/get/mako-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -361,7 +368,7 @@ function twrp-mako {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-0-mako.img
+  fastboot flash recovery cm-13.0-*-NIGHTLY-mako-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -374,10 +381,11 @@ function twrp-mako {
   recovery
 }
 
-function twrp-grouper {
+# Nexus 7
+function cm-grouper {
   # Download
   show_info 'Download Latest Nightly Recovery...'
-  curl -O https://dl.twrp.me/grouper/twrp-3.0.0-0-grouper.img
+  curl -O http://download.cyanogenmod.org/get/grouper-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -388,7 +396,7 @@ function twrp-grouper {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-0-grouper.img
+  fastboot flash recovery cm-12.1-*-NIGHTLY-grouper-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -401,10 +409,11 @@ function twrp-grouper {
   recovery
 }
 
-function twrp-tilapia {
+# Nexus 7
+function cm-tilapia {
   # Download
   show_info 'Download Latest Nightly Recovery...'
-  curl -O https://dl.twrp.me/tilapia/twrp-2.8.7.0-tilapia.img
+  curl -O http://download.cyanogenmod.org/get/tilapia-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -415,7 +424,7 @@ function twrp-tilapia {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-2.8.7.0-tilapia.img
+  fastboot flash recovery cm-12.1-*-NIGHTLY-tilapia-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -428,7 +437,8 @@ function twrp-tilapia {
   recovery
 }
 
-function twrp-maguro {
+# Galaxy Nexus
+function cm-maguro {
   # Download
   show_info 'Download Latest Nightly Recovery...'
   curl -O http://download.cyanogenmod.org/get/maguro-latest-recovery.img
@@ -442,7 +452,7 @@ function twrp-maguro {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery cm-12.1-*.img
+  fastboot flash recovery cm-12.1-*-NIGHTLY-maguro-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'

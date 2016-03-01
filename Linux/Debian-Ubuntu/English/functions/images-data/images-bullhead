@@ -21,10 +21,11 @@ function bullhead-MDB08M {
   # Download
   show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-5867cc27.tgz
+  # Extract
   show_info 'Extraction Factory Images...'
   tar zxf bullhead*.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
   cd bullhead-mdb08m
   ./flash-all.sh
   # Done
@@ -37,8 +38,11 @@ function bullhead-MMB29Q {
   # Download
   show_info 'Download ...'
   curl -O https://dl.google.com/dl/android/aosp/bullhead-mmb29q-factory-197bd207.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf bullhead*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd bullhead-mmb29q
   ./flash-all.sh
   # Done

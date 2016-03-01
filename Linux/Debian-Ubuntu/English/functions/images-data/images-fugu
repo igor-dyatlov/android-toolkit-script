@@ -21,10 +21,11 @@ function fugu-LRX21V {
   # Download
   show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/fugu-lrx21v-factory-64050f47.tgz
+  # Extract
   show_info 'Extraction Factory Images...'
   tar zxf fugu*.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
   cd fugu-lrx21v
   ./flash-all.sh
   # Done
@@ -35,10 +36,13 @@ function fugu-LRX21V {
 
 function fugu-LMY48N {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/fugu-lmy48n-factory-3b9d8638.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf fugu*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd fugu-lmy48n
   ./flash-all.sh
   # Done
@@ -49,10 +53,13 @@ function fugu-LMY48N {
 
 function fugu-MRA58N {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/fugu-mra58n-factory-8517d819.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf fugu*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd fugu-mra58n
   ./flash-all.sh
   # Done
@@ -63,10 +70,13 @@ function fugu-MRA58N {
 
 function fugu-MMB29U {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/fugu-mmb29u-factory-7ce497cb.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf fugu*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd fugu-mmb29u
   ./flash-all.sh
   # Done

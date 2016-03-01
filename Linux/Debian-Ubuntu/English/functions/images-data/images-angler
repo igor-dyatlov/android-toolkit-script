@@ -21,10 +21,11 @@ function angler-MMB29N {
   # Download
   show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/angler-mmb29n-factory-b1463752.tgz
+  # Extract
   show_info 'Extraction Factory Images...'
   tar zxf angler*.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
   cd angler-mmb29n
   ./flash-all.sh
   # Done
@@ -35,10 +36,13 @@ function angler-MMB29N {
 
 function angler-MMB29Q {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/angler-mmb29q-factory-239acdde.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf angler*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd angler-mmb29q
   ./flash-all.sh
   # Done

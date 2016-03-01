@@ -21,10 +21,11 @@ function hammerhead-KRT16M {
   # Download
   show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/hammerhead-krt16m-factory-bd9c39de.tgz
+  # Extract
   show_info 'Extraction Factory Images...'
   tar zxf hammerhead*.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
   cd hammerhead-krt16m
   ./flash-all.sh
   # Done
@@ -35,10 +36,13 @@ function hammerhead-KRT16M {
 
 function hammerhead-KTU84P {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/hammerhead-ktu84p-factory-35ea0277.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf hammerhead*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd hammerhead-ktu84p
   ./flash-all.sh
   # Done
@@ -49,10 +53,13 @@ function hammerhead-KTU84P {
 
 function hammerhead-LRX21O {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/hammerhead-lrx21o-factory-01315e08.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf hammerhead*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd hammerhead-lrx21o
   ./flash-all.sh
   # Done
@@ -63,10 +70,13 @@ function hammerhead-LRX21O {
 
 function hammerhead-LMY48M {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/hammerhead-lmy48m-factory-bf3c82fd.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf hammerhead*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd hammerhead-lmy48m
   ./flash-all.sh
   # Done
@@ -77,10 +87,13 @@ function hammerhead-LMY48M {
 
 function hammerhead-MRA58N {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/hammerhead-mra58n-factory-aeca4139.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf hammerhead*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd hammerhead-mra58n
   ./flash-all.sh
   # Done
@@ -91,11 +104,13 @@ function hammerhead-MRA58N {
 
 function hammerhead-MMB29Q {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/hammerhead-mmb29q-factory-6356d31e.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf hammerhead*.tgz
-  show_info '...'
+  # Install
+  show_info 'Install Factory Images...'
   cd hammerhead-mmb29q
   ./flash-all.sh
   # Done

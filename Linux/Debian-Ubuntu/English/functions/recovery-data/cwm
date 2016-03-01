@@ -19,7 +19,7 @@
 
 function cwm-hammerhead {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.5-hammerhead.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -46,7 +46,7 @@ function cwm-hammerhead {
 
 function cwm-flo {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.7-flo.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -73,7 +73,7 @@ function cwm-flo {
 
 function cwm-deb {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.8-deb.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -100,7 +100,7 @@ function cwm-deb {
 
 function cwm-manta {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.7-manta.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -127,7 +127,7 @@ function cwm-manta {
 
 function cwm-mako {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.7-mako.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -154,7 +154,7 @@ function cwm-mako {
 
 function cwm-grouper {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.3-grouper.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -181,7 +181,7 @@ function cwm-grouper {
 
 function cwm-tilapia {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.3-tilapia.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -208,7 +208,7 @@ function cwm-tilapia {
 
 function cwm-maguro {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.7-maguro.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -235,7 +235,7 @@ function cwm-maguro {
 
 function cwm-toroplus {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.3-toroplus.img
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -261,7 +261,7 @@ function cwm-toroplus {
 
 function cwm-toro {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download ClockWorkMod image...'
   curl -O http://download2.clockworkmod.com/recoveries/recovery-clockwork-touch-6.0.4.3-toro.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'

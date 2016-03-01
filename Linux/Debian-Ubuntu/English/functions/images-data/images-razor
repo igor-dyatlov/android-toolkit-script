@@ -21,10 +21,11 @@ function razor-JSS15R {
   # Download
   show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/razor-jss15r-factory-ec2d4f76.tgz
+  # Extract
   show_info 'Extraction Factory Images...'
   tar zxf razor*.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
   cd razor-jss15r
   ./flash-all.sh
   # Done
@@ -35,10 +36,13 @@ function razor-JSS15R {
 
 function razor-KRT16S {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/razor-krt16s-factory-7235eb0d.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf razor*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd razor-krt16s
   ./flash-all.sh
   # Done
@@ -49,10 +53,13 @@ function razor-KRT16S {
 
 function razor-KTU84P {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/razor-ktu84p-factory-b1b2c0da.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf razor*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd razor-ktu84p
   ./flash-all.sh
   # Done
@@ -63,10 +70,13 @@ function razor-KTU84P {
 
 function razor-LRX21P {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/razor-lrx21p-factory-ba55c6ab.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf razor*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd razor-lrx21p
   ./flash-all.sh
   # Done
@@ -77,10 +87,13 @@ function razor-LRX21P {
 
 function razor-LRX22G {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/razor-lrx22g-factory-bff2093e.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf razor*.tgz
+  # Install
+  show_info 'Install Factory Images...'
   cd razor-lrx22g
   ./flash-all.sh
   # Done
@@ -91,11 +104,13 @@ function razor-LRX22G {
 
 function razor-LMY48T {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/razor-lmy48t-factory-b6a844f2.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf razor*.tgz
-  show_info '...'
+  # Install
+  show_info 'Install Factory Images...'
   cd razor-lmy48t
   ./flash-all.sh
   # Done
@@ -106,11 +121,13 @@ function razor-LMY48T {
 
 function razor-MRA58V {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/razor-mra58v-factory-45d0421b.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf razor*.tgz
-  show_info '...'
+  # Install
+  show_info 'Install Factory Images...'
   cd razor-mra58v
   ./flash-all.sh
   # Done
@@ -121,11 +138,13 @@ function razor-MRA58V {
 
 function razor-MMB29Q {
   # Download
-  show_info 'Download ...'
+  show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/razor-mmb29q-factory-0fe7279d.tgz
-  show_info 'Extraction f...'
+  # Extract
+  show_info 'Extraction Factory Images...'
   tar zxf razor*.tgz
-  show_info '...'
+  # Install
+  show_info 'Install Factory Images...'
   cd razor-mmb29q
   ./flash-all.sh
   # Done

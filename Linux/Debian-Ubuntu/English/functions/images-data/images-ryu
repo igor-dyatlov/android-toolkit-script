@@ -21,10 +21,11 @@ function ryu-MXB48T {
   # Download
   show_info 'Download Factory Images...'
   curl -O https://dl.google.com/dl/android/aosp/ryu-mxb48t-factory-43820b34.tgz
+  # Extract
   show_info 'Extraction Factory Images...'
   tar zxf ryu*.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
   cd ryu-mxb48t
   ./flash-all.sh
   # Done
