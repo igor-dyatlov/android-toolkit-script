@@ -11,11 +11,6 @@ And also, this tool allows you to set custom recovery, lock/unlock bootloader an
 - Automatically downloads the required recovery (Cyanogen Recovery/[CWM](https://www.clockworkmod.com/rommanager)/[TWRP](https://twrp.me/)/[Stock](https://developers.google.com/android/nexus/images))
 - Automatically downloads the [original](https://developers.google.com/android/nexus/images) firmware image for your devices
 
-## Requirements
- - Original USB wire (Phone sew only through the original cord. The prevention of failures during firmware.)
- - Fastboot
- - Original factory firmware
-
 ## Flashing Instructions
  - Download the script
 
