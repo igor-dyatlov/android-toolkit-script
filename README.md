@@ -34,13 +34,11 @@ Run from source folder:
 Excellent! Good luck in the firmware    
 
 ## Screenshots
-<img src="Screenshots/Screenshot-1.png" width="35%" />
-<img src="Screenshots/Screenshot-2.png" width="35%" />
-<img src="Screenshots/Screenshot-3.png" width="35%" />
-<img src="Screenshots/Screenshot-4.png" width="35%" />
-<img src="Screenshots/Screenshot-5.png" width="35%" />
-<img src="Screenshots/Screenshot-6.png" width="35%" />
-<img src="Screenshots/Screenshot-7.png" width="35%" />
+<img src="Screenshots/Screenshot-1.png" width="45%" />
+<img src="Screenshots/Screenshot-2.png" width="45%" />
+<img src="Screenshots/Screenshot-3.png" width="45%" />
+<img src="Screenshots/Screenshot-4.png" width="45%" />
+<img src="Screenshots/Screenshot-5.png" width="45%" />
 
 ### Donation
 https://www.paypal.me/IgorDyatlov
