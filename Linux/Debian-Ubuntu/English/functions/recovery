@@ -1,12 +1,5 @@
 #!/bin/bash
 
-dir="$(dirname "$0")"
-
-source $dir/functions/recovery-data/cm
-source $dir/functions/recovery-data/cwm
-source $dir/functions/recovery-data/stock
-source $dir/functions/recovery-data/twrp
-
 # Authors:
 #   Igor Dyatlov <dyatlov.igor@gmail.com>
 #
@@ -23,6 +16,13 @@ source $dir/functions/recovery-data/twrp
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+dir="$(dirname "$0")"
+
+source $dir/functions/recovery-data/cm
+source $dir/functions/recovery-data/cwm
+source $dir/functions/recovery-data/stock
+source $dir/functions/recovery-data/twrp
 
 # Install recovery
 function recovery {

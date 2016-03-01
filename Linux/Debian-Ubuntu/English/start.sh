@@ -28,7 +28,7 @@ dir="$(dirname "$0")"
 . $dir/functions/check
 . $dir/functions/erase
 . $dir/functions/images
-. $dir/functions/oem
+. $dir/functions/bootloader
 . $dir/functions/recovery
 . $dir/functions/search
 
@@ -60,13 +60,13 @@ function main {
     eval `resize`
     MAIN=$(whiptail \
         --notags \
-        --title "Nexus Fastboot Script" \
+        --title "Nexus Toolkit" \
         --menu "\nWhat would you like to do?" \
         --ok-button "Run" \
         --cancel-button "Quit" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         'search'      'Search devices' \
-        'oem'         'OEM Lock/Unlock' \
+        'bootloader'  'OEM Lock/Unlock' \
         'erase'       'Erase sections' \
         'images'      'Install Factory Images' \
         'recovery'    'Install CWM/TWRP/Stock recovery' \

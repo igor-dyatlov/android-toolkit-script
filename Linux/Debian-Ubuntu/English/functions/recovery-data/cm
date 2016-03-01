@@ -19,7 +19,7 @@
 
 function cm-ryu {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -47,7 +47,7 @@ function cm-ryu {
 # Nexus 6P
 function cm-angler {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O http://download.cyanogenmod.org/get/angler-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -75,8 +75,8 @@ function cm-angler {
 # Nexus 5X
 function twrp-bullhead {
   # Download
-  show_info 'Download the latest TWRP image...'
-  curl -O https://dl.twrp.me/bullhead/twrp-3.0.0-0-bullhead.img
+  show_info 'Download Latest Nightly Recovery...'
+  curl -O http://download.cyanogenmod.org/get/bullhead-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -87,7 +87,7 @@ function twrp-bullhead {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-0-bullhead.img
+  fastboot flash recovery cm-13.0-*-NIGHTLY-bullhead-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -103,8 +103,8 @@ function twrp-bullhead {
 # Nexus 6
 function cm-shamu {
   # Download
-  show_info 'Download the latest TWRP image...'
-  curl -O https://dl.twrp.me/shamu/twrp-3.0.0-0-shamu.img
+  show_info 'Download Latest Nightly Recovery...'
+  curl -O http://download.cyanogenmod.org/get/shamu-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -115,7 +115,7 @@ function cm-shamu {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-0-shamu.img
+  fastboot flash recovery cm-13.0-*-NIGHTLY-shamu-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -130,8 +130,8 @@ function cm-shamu {
 
 function twrp-fugu {
   # Download
-  show_info 'Download the latest TWRP image...'
-  curl -O https://dl.twrp.me/fugu/twrp-3.0.0-0-fugu.img
+  show_info 'Download Latest Nightly Recovery...'
+  curl -O http://download.cyanogenmod.org/get/fugu-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -142,7 +142,7 @@ function twrp-fugu {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-0-fugu.img
+  fastboot flash recovery cm-12.1-*-NIGHTLY-fugu-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -155,10 +155,10 @@ function twrp-fugu {
   recovery
 }
 
-function twrp-flounder {
+function cm-flounder {
   # Download
-  show_info 'Download the latest TWRP image...'
-  curl -O https://dl.twrp.me/flounder/twrp-3.0.0-2-flounder.img
+  show_info 'Download Latest Nightly Recovery...'
+  curl -O http://download.cyanogenmod.org/get/flounder-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -169,7 +169,34 @@ function twrp-flounder {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-2-flounder.img
+  fastboot flash recovery cm-13.0-*-NIGHTLY-flounder-recovery.img
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}
+
+function cm-flounder-lte {
+  # Download
+  show_info 'Download Latest Nightly Recovery...'
+  curl -O http://download.cyanogenmod.org/get/flounder_lte-latest-recovery.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery cm-13.0-*-NIGHTLY-flounder-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -185,7 +212,7 @@ function twrp-flounder {
 # Nexus 5
 function cm-hammerhead {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O http://download.cyanogenmod.org/get/hammerhead-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -213,7 +240,7 @@ function cm-hammerhead {
 # Nexus 5 CAF
 function cm-hammerheadcaf {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O http://download.cyanogenmod.org/get/hammerheadcaf-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -241,8 +268,8 @@ function cm-hammerheadcaf {
 # Nexus 7
 function cm-flo {
   # Download
-  show_info 'Download the latest TWRP image...'
-  curl -O https://dl.twrp.me/flo/twrp-3.0.0-0-flo.img
+  show_info 'Download Latest Nightly Recovery...'
+  curl -O http://download.cyanogenmod.org/get/flo-latest-recovery.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
   fastboot erase recovery
@@ -253,7 +280,7 @@ function cm-flo {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.0-0-flo.img
+  fastboot flash recovery cm-13.0-*-NIGHTLY-flo-recovery.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'
@@ -268,7 +295,7 @@ function cm-flo {
 
 function twrp-deb {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O https://dl.twrp.me/deb/twrp-3.0.0-0-deb.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -295,7 +322,7 @@ function twrp-deb {
 
 function twrp-manta {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O https://dl.twrp.me/manta/twrp-3.0.0-1-manta.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -322,7 +349,7 @@ function twrp-manta {
 
 function twrp-mako {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O https://dl.twrp.me/mako/twrp-3.0.0-0-mako.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -349,7 +376,7 @@ function twrp-mako {
 
 function twrp-grouper {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O https://dl.twrp.me/grouper/twrp-3.0.0-0-grouper.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -376,7 +403,7 @@ function twrp-grouper {
 
 function twrp-tilapia {
   # Download
-  show_info 'Download the latest TWRP image...'
+  show_info 'Download Latest Nightly Recovery...'
   curl -O https://dl.twrp.me/tilapia/twrp-2.8.7.0-tilapia.img
   # Erasing old recovery
   show_warning 'Erasing old recovery...'
@@ -443,7 +470,8 @@ function cm {
         "cm-bullhead"       "Nexus 5X" \
         "cm-shamu"          "Nexus 6" \
         "cm-fugu"           "Nexus Player" \
-        "cm-flounder"       "Nexus 9" \
+        "cm-flounder"       "Nexus 9 (Wi-Fi)" \
+        "cm-flounder-lte"   "Nexus 9 (Mobile)" \
         "cm-hammerhead"     "Nexus 5" \
         "cm-hammerheadcaf"  "Nexus 5 (CAF)" \
         "cm-flo"            "Nexus 7 [2013] (Wi-Fi)" \
