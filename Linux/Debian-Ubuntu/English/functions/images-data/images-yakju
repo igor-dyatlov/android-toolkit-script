@@ -17,15 +17,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-function ryu-MXB48T {
+function - {
   # Download
   show_info 'Download Factory Images...'
-  curl -O https://dl.google.com/dl/android/aosp/ryu-mxb48t-factory-43820b34.tgz
+  curl -O
+  # Extract
   show_info 'Extraction Factory Images...'
-  tar zxf ryu*.tgz
+  tar zxf *.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
-  cd ryu-mxb48t
+  cd -
   ./flash-all.sh
   # Done
   show_success 'Done.'
@@ -33,22 +34,22 @@ function ryu-MXB48T {
   images
 }
 
-# Pixel C
-function images-ryu {
+#
+function images- {
   eval `resize`
-  NEXUS5X=$(whiptail \
+  =$(whiptail \
       --notags \
-      --title "Pixel C" \
+      --title " " \
       --menu "\nFor what device you want to flash the recovery?" \
       --ok-button "Install" \
       --cancel-button "Go Back" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
-      "ryu-MXB48T"         "Marshmallow 6.0.1" \
+      "yakju-"         " " \
       3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $PIXELC
+        clear && $
     else
         clear && main
     fi
