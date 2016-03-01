@@ -21,7 +21,7 @@ And also, this tool allows you to set custom recovery, lock/unlock bootloader an
 
  Run in the console:
 
-     git clone https://github.com/igor-dyatlov/nexus-fastboot-script.git
+    git clone https://github.com/igor-dyatlov/nexus-fastboot-script.git
 
  Alternatively you can [download](https://github.com/igor-dyatlov/nexus-fastboot-script/archive/master.zip) this repository.
 
