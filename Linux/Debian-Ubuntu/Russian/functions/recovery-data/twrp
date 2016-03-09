@@ -518,8 +518,8 @@ function twrp {
         --notags \
         --title "TeamWin - TWRP" \
         --menu "\nFor what device you want to flash the recovery?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
+        --ok-button "Установить" \
+        --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         "twrp-ryu"            "Pixel C" \
         "twrp-angler"         "Nexus 6P" \

@@ -17,15 +17,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-function shamu-MXB48T {
+function angler-MMB29N {
   # Download
   show_info 'Download Factory Images...'
-  curl -O
+  curl -O https://dl.google.com/dl/android/aosp/angler-mmb29n-factory-b1463752.tgz
+  # Extract
   show_info 'Extraction Factory Images...'
-  tar zxf shamu*.tgz
+  tar zxf angler*.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
-  cd shamu-
+  cd angler-mmb29n
   ./flash-all.sh
   # Done
   show_success 'Done.'
@@ -33,28 +34,40 @@ function shamu-MXB48T {
   images
 }
 
-# Nexus 6
-function images-shamu {
+function angler-MMB29Q {
+  # Download
+  show_info 'Download Factory Images...'
+  curl -O https://dl.google.com/dl/android/aosp/angler-mmb29q-factory-239acdde.tgz
+  # Extract
+  show_info 'Extraction Factory Images...'
+  tar zxf angler*.tgz
+  # Install
+  show_info 'Install Factory Images...'
+  cd angler-mmb29q
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  images
+}
+
+# Nexus 6P
+function images-angler {
   eval `resize`
-  NEXUS6=$(whiptail \
+  NEXUS6P=$(whiptail \
       --notags \
-      --title "Nexus 6" \
-      --menu "\nFor what device you want to flash the recovery?" \
-      --ok-button "Install" \
-      --cancel-button "Go Back" \
+      --title "Nexus 6P" \
+      --menu "\nКакую версию прошивки вы хотите установить?" \
+      --ok-button "Установить" \
+      --cancel-button "Назад" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
-      "shamu-LRX21O"
-      "shamu-LRX22C"
-      "shamu-LMY48Y"
-      "shamu-LYZ28N"
-      "shamu-LVY48I"
-      "shamu-MRA58X"
-      "shamu-MMB29V"         "Marshmallow 6.0.1" \
-      3>&1 1>&2 2>&3)
+      "angler-MMB29N"         "Marshmallow 6.0.0" \
+      "angler-MMB29Q"         "Marshmallow 6.0.1" \
+        3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $NEXUS6
+        clear && $NEXUS6P
     else
         clear && main
     fi

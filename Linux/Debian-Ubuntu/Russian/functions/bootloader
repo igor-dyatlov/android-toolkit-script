@@ -1,0 +1,103 @@
+#!/bin/bash
+
+# Authors:
+#   Igor Dyatlov <dyatlov.igor@gmail.com>
+#
+# Copyright 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# OEM Lock
+function oemlock {
+  show_info 'Locking...'
+  fastboot oem lock
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "The bootloader is locked." 8 78
+  bootloader
+}
+
+# Lock
+function flashing-lock {
+  show_info 'Locking...'
+  fastboot flashing lock
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "The bootloader is locked." 8 78
+  bootloader
+}
+
+# OEM Unlock
+function oemunlock {
+  show_info 'Unlocking...'
+  show_warning 'Confirm the action on your Nexus'
+  fastboot oem unlock
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "The bootloader is unlocked." 8 78
+  bootloader
+}
+
+# Unlock
+function flashing-unlock {
+  show_info 'Unlocking...'
+  show_warning 'Confirm the action on your Nexus'
+  fastboot flashing unlock
+  # Reboot bootloader
+  show_warning 'Перезагрузка устройства'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "The bootloader is unlocked." 8 78
+  bootloader
+}
+# OEM Lock/Unlock
+function bootloader {
+    eval `resize`
+    BOOT=$(whiptail \
+        --notags \
+        --title "Unlock and lock the bootloader" \
+        --menu "\nWhat would you like to do?" \
+        --ok-button "Применить" \
+        --cancel-button "Назад" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'oemlock'             'Разблокировать загрузчик, для старых устройств' \
+        'oemunlock'           'Заблокировать загрузчик, для старых устройств' \
+        'flashing-lock'       'Разблокировать загрузчик' \
+        'flashing-unlock'     'Заблокировать загрузчик' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $BOOT
+    else
+        clear && main
+    fi
+}

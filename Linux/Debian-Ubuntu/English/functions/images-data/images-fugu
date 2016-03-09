@@ -68,16 +68,16 @@ function fugu-MRA58N {
   images
 }
 
-function fugu-MMB29U {
+function fugu-MMB29V {
   # Download
   show_info 'Download Factory Images...'
-  curl -O https://dl.google.com/dl/android/aosp/fugu-mmb29u-factory-7ce497cb.tgz
+  curl -O https://dl.google.com/dl/android/aosp/fugu-mmb29v-factory-2db4c688.tgz
   # Extract
   show_info 'Extraction Factory Images...'
   tar zxf fugu*.tgz
   # Install
   show_info 'Install Factory Images...'
-  cd fugu-mmb29u
+  cd fugu-mmb29v
   ./flash-all.sh
   # Done
   show_success 'Done.'
@@ -95,10 +95,10 @@ function images-fugu {
       --ok-button "Install" \
       --cancel-button "Go Back" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
-        "fugu-LRX21V"         "Lollipop 5.0" \
-        "fugu-LMY48N"         "Lollipop 5.1.1" \
-        "fugu-MRA58N"         "Marshmallow 6.0.0" \
-        "fugu-MMB29U"         "Marshmallow 6.0.1" \
+      "fugu-LRX21V"         "Lollipop 5.0" \
+      "fugu-LMY48N"         "Lollipop 5.1.1" \
+      "fugu-MRA58N"         "Marshmallow 6.0.0" \
+      "fugu-MMB29V"         "Marshmallow 6.0.1" \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

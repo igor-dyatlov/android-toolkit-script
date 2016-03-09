@@ -67,14 +67,14 @@ function main {
         --ok-button "Run" \
         --cancel-button "Quit" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'search'      'Search devices' \
+        'search'      'Найти устройство' \
         'backup'      'Backup/Restore' \
         'bootloader'  'OEM Lock/Unlock' \
-        'erase'       'Erase sections' \
-        'images'      'Install Factory Images' \
-        'recovery'    'Install CWM/TWRP/Stock recovery' \
-        'root'        'Install Super SU' \
-        'tools'       'Other tools' \
+        'erase'       'Очистить разделы' \
+        'images'      'Установить Factory Images' \
+        'recovery'    'Установить CWM/TWRP/Stock recovery' \
+        'root'        'Установить Super SU' \
+        'tools'       'Другие инструменты' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

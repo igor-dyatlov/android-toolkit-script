@@ -26,6 +26,8 @@ Run from source folder:
 
     ./start.sh
 
+On your device, go into Settings -> About and find the Build Number and tap on it 7 times to enable developer settings. Press back and go into Developer Options and enable USB debugging. From your computer, open a command prompt and type:
+
 Excellent! Good luck in the firmware    
 
 ## Screenshots

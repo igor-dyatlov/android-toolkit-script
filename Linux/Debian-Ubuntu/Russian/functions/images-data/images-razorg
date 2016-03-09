@@ -16,16 +16,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# Search devices
-function search {
-  show_info 'Start the device in fastboot mode...'
-  show_warning 'Devices rebooting'
-  adb reboot bootloader
-  show_info 'Verify that your phone is in fastboot mode...'
-  fastboot devices
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "The device is connected." 8 78
-  main
-}

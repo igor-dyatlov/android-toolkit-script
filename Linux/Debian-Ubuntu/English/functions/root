@@ -17,15 +17,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Search devices
-function search {
-  show_info 'Start the device in fastboot mode...'
-  show_warning 'Devices rebooting'
-  adb reboot bootloader
-  show_info 'Verify that your phone is in fastboot mode...'
-  fastboot devices
+# SuperSU
+function root {
+  show_info 'Download Latest SuperSU...'
+  curl -O https://download.chainfire.eu/921/SuperSU/UPDATE-SuperSU-v2.65-20151226141550.zip?retrieve_file=1
+  show_info 'Extraction SuperSU...'
+  unzip UPDATE-SuperSU-*.zip
+  adb push ./UPDATE-SuperSU-v2.65-20151226141550.zip /sdcard/
+  adb reboot-bootloader
+  sleep 5
   # Done
   show_success 'Done.'
-  whiptail --title "Finished" --msgbox "The device is connected." 8 78
-  main
+  whiptail --title "Finished" --msgbox "Recovery Mode Manually install the Root File." 8 78
 }

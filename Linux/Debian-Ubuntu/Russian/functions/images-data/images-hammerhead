@@ -102,16 +102,16 @@ function hammerhead-MRA58N {
   images
 }
 
-function hammerhead-MMB29V {
+function hammerhead-MMB29Q {
   # Download
   show_info 'Download Factory Images...'
-  curl -O https://dl.google.com/dl/android/aosp/hammerhead-mmb29v-factory-62a68ee9.tgz
+  curl -O https://dl.google.com/dl/android/aosp/hammerhead-mmb29q-factory-6356d31e.tgz
   # Extract
   show_info 'Extraction Factory Images...'
   tar zxf hammerhead*.tgz
   # Install
   show_info 'Install Factory Images...'
-  cd hammerhead-mmb29v
+  cd hammerhead-mmb29q
   ./flash-all.sh
   # Done
   show_success 'Done.'
@@ -129,13 +129,13 @@ function images-hammerhead {
       --ok-button "Install" \
       --cancel-button "Go Back" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
-      "hammerhead-KRT16M"         "KitKat 4.4" \
-      "hammerhead-KTU84P"         "KitKat 4.4.4" \
-      "hammerhead-LRX21O"         "Lollipop 5.0" \
-      "hammerhead-LMY48M"         "Lollipop 5.1.1" \
-      "hammerhead-MRA58N"         "Marshmallow 6.0.0" \
-      "hammerhead-MMB29V"         "Marshmallow 6.0.1" \
-      3>&1 1>&2 2>&3)
+        "hammerhead-KRT16M"         "KitKat 4.4" \
+        "hammerhead-KTU84P"         "KitKat 4.4.4" \
+        "hammerhead-LRX21O"         "Lollipop 5.0" \
+        "hammerhead-LMY48M"         "Lollipop 5.1.1" \
+        "hammerhead-MRA58N"         "Marshmallow 6.0.0" \
+        "hammerhead-MMB29Q"         "Marshmallow 6.0.1" \
+        3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then

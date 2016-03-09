@@ -17,15 +17,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-function shamu-MXB48T {
+function - {
   # Download
   show_info 'Download Factory Images...'
   curl -O
+  # Extract
   show_info 'Extraction Factory Images...'
-  tar zxf shamu*.tgz
+  tar zxf *.tgz
+  # Install
   show_info 'Install Factory Images...'
-  show_warning ' '
-  cd shamu-
+  cd -
   ./flash-all.sh
   # Done
   show_success 'Done.'
@@ -33,28 +34,22 @@ function shamu-MXB48T {
   images
 }
 
-# Nexus 6
-function images-shamu {
+#
+function images- {
   eval `resize`
-  NEXUS6=$(whiptail \
+  =$(whiptail \
       --notags \
-      --title "Nexus 6" \
+      --title " " \
       --menu "\nFor what device you want to flash the recovery?" \
       --ok-button "Install" \
       --cancel-button "Go Back" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
-      "shamu-LRX21O"
-      "shamu-LRX22C"
-      "shamu-LMY48Y"
-      "shamu-LYZ28N"
-      "shamu-LVY48I"
-      "shamu-MRA58X"
-      "shamu-MMB29V"         "Marshmallow 6.0.1" \
+      "yakju-"         " " \
       3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $NEXUS6
+        clear && $
     else
         clear && main
     fi
