@@ -1,0 +1,11 @@
+# Android backup Files
+*.ab
+
+# Zip Files
+*.zip
+
+# Tgz Files
+*.tgz
+
+# Img Files
+*.img
