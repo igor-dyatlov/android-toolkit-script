@@ -88,8 +88,8 @@ function bootloader {
         --ok-button "Apply" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'oemlock'       'Lock the bootloader or, for older devices' \
-        'oemunlock'     'Unlock the bootloader or, for older devices' \
+        'oemlock'             'Lock the bootloader or, for older devices' \
+        'oemunlock'           'Unlock the bootloader or, for older devices' \
         'flashing-lock'       'Lock the bootloader' \
         'flashing-unlock'     'Unlock the bootloader' \
         3>&1 1>&2 2>&3)

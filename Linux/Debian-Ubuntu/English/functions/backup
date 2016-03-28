@@ -17,9 +17,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-function apk {
-  
+function backup-apk {
   adb backup -apk -obb -shared -all -system -f ./backup-data/Android_System_$(date +%F-%H-%M).ab
+}
+
+function restore-apk {
+adb restore
 }
 
 # Backup/Restore
