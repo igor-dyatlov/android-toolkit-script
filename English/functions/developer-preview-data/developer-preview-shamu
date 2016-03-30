@@ -17,10 +17,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-function angler-dp1 {
+function shamu-dp1 {
   # Download
   show_info 'Download Factory Images...'
-  curl -O http://storage.googleapis.com/androiddevelopers/shareables/preview/angler-npc56w-preview-2834ca3c.tgz
+  curl -O http://storage.googleapis.com/androiddevelopers/shareables/preview/shamu-npc56p-preview-54b13c67.tgz
   # Extract
   show_info 'Extraction Factory Images...'
   tar zxf angler*.tgz
@@ -31,20 +31,20 @@ function angler-dp1 {
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  developer-preview
+  images
 }
 
-# Nexus 6P
-function developer-preview-angler {
+# Nexus 6
+function developer-preview-shamu {
   eval `resize`
   NEXUS6P=$(whiptail \
       --notags \
-      --title "Nexus 6P" \
+      --title "Nexus 6" \
       --menu "\nWhat is the firmware version you want to install?" \
       --ok-button "Install" \
       --cancel-button "Go Back" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
-      "angler-dp1"         "Developer Preview 1" \
+      "shamu-dp1"         "Developer Preview 1" \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

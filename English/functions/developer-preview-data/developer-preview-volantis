@@ -31,7 +31,7 @@ function angler-dp1 {
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  developer-preview
+  images
 }
 
 # Nexus 6P

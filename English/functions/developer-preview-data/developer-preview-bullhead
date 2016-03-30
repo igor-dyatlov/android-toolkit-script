@@ -17,42 +17,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-function bullhead-MDB08M {
-  # Download
-  show_info 'Download Factory Images...'
-  curl -O https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-5867cc27.tgz
-  # Extract
-  show_info 'Extraction Factory Images...'
-  tar zxf bullhead*.tgz
-  # Install
-  show_info 'Install Factory Images...'
-  cd bullhead-mdb08m
-  ./flash-all.sh
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
-}
-
-function bullhead-MHC19J {
+function bullhead-dp1 {
   # Download
   show_info 'Download ...'
-  curl -O https://dl.google.com/dl/android/aosp/bullhead-mhc19j-factory-ef8341a4.tgz
+  curl -O http://storage.googleapis.com/androiddevelopers/shareables/preview/bullhead-npc56w-preview-d86c7559.tgz
   # Extract
   show_info 'Extraction Factory Images...'
   tar zxf bullhead*.tgz
   # Install
   show_info 'Install Factory Images...'
-  cd bullhead-mhc19j
+  cd bullhead-npc56w
   ./flash-all.sh
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
+  developer-preview
 }
 
 # Nexus 5X
-function images-bullhead {
+function developer-preview-bullhead {
     eval `resize`
     NEXUS5X=$(whiptail \
         --notags \
@@ -61,8 +44,7 @@ function images-bullhead {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        "bullhead-MDB08M"         "Marshmallow 6.0.0" \
-        "bullhead-MHC19J"         "Marshmallow 6.0.1" \
+        "bullhead-dp1"         "Developer Preview 1" \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
