@@ -22,7 +22,7 @@ function backup-apk {
 }
 
 function restore-apk {
-adb restore
+  adb restore
 }
 
 # Backup/Restore
@@ -30,7 +30,7 @@ function backup {
     eval `resize`
     BACKUP=$(whiptail \
         --notags \
-        --title "Backup/Restore " \
+        --title "Backup/Restore" \
         --menu "\nWhat recovery would you like to install?" \
         --ok-button "Install" \
         --cancel-button "Go Back" \

@@ -2,12 +2,19 @@
 
 dir="$(dirname "$0")"
 
-DEPS="$dir/data/dependencies.list"
+DEPS="$dir/data/dependencies-opensuse.list"
+
+DEPS="$dir/data/dependencies-archlinux.list"
+
+DEPSUBUNTU="$dir/data/dependencies-ubuntu.list"
+
 
 # Dependency Check
 function check {
+    case `lsb_release -i` in
+	    Ubuntu)
     show_info "Checking dependencies..."
-    for package in $(cat $DEPS)
+    for package in $(cat $DEPSUBUNTU)
     do 
     PKGCHECK=$(dpkg-query -W --showformat='${Status}\n' $package|grep "install ok installed")
     if [ "" == "$PKGCHECK" ]; then
@@ -36,4 +43,15 @@ function check {
         show_info "'$package' is installed. Proceeding"
     fi
     done
+	        ;;
+	    Fedora)
+	        ;;
+	    archlinux)
+	        ;;
+	    openSUSE)
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;;
+	esac	
 }

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Authors:
+#   Igor Dyatlov <dyatlov.igor@gmail.com>
+#
+# Copyright 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+dir="$(dirname "$0")"
+
+. $dir/functions/backup
+. $dir/functions/developer-preview
+. $dir/functions/gapps
+. $dir/functions/root
+
+# Other tools
+function tools {
+    eval `resize`
+    TOOLS=$(whiptail \
+        --notags \
+        --title "Other tools" \
+        --menu "\nWhat recovery would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'backup'                  'Backup/Restore' \
+        'developer-preview'       'Install Developer Preview Images' \
+        'gapps'                   '' \
+        'root'                    '' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $TOOLS
+    else
+        clear && main
+    fi
+}
