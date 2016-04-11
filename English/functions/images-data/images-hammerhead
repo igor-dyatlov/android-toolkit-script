@@ -102,21 +102,44 @@ function hammerhead-MRA58N {
   images
 }
 
-function hammerhead-MMB29V {
-  # Download
-  show_info 'Download Factory Images...'
-  curl -O https://dl.google.com/dl/android/aosp/hammerhead-mmb29v-factory-62a68ee9.tgz
-  # Extract
-  show_info 'Extraction Factory Images...'
-  tar zxf hammerhead*.tgz
-  # Install
-  show_info 'Install Factory Images...'
-  cd hammerhead-mmb29v
-  ./flash-all.sh
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
+MMB29X="hammerhead-mmb29x-factory-c6109f15.tgz"
+function hammerhead-MMB29X {
+  if [ -f "$MMB29X" ] then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf hammerhead*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd hammerhead-mmb29v
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Cleanup and finish
+    rm -rf hammerhead*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    curl -O https://dl.google.com/dl/android/aosp/hammerhead-mmb29x-factory-c6109f15.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf hammerhead*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd hammerhead-mmb29v
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Cleanup and finish
+    rm -rf hammerhead*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
 }
 
 # Nexus 5
@@ -125,7 +148,7 @@ function images-hammerhead {
   NEXUS5=$(whiptail \
       --notags \
       --title "Nexus 5" \
-      --menu "\nFor what device you want to flash the recovery?" \
+      --menu "\nWhat is the firmware version you want to install?" \
       --ok-button "Install" \
       --cancel-button "Go Back" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
@@ -134,7 +157,7 @@ function images-hammerhead {
       "hammerhead-LRX21O"         "Lollipop 5.0" \
       "hammerhead-LMY48M"         "Lollipop 5.1.1" \
       "hammerhead-MRA58N"         "Marshmallow 6.0.0" \
-      "hammerhead-MMB29V"         "Marshmallow 6.0.1" \
+      "hammerhead-MMB29X"         "Marshmallow 6.0.1" \
       3>&1 1>&2 2>&3)
 
     exitstatus=$?

@@ -1,6 +1,7 @@
 # Nexus Fastboot Script
 Android Toolkit for Debian, Ubuntu, Arch Linux, Fedora, openSUSE
-###### Coming soon MacOS X and Windows
+###### Coming soon MacOS X and Windows*
+*An Ubuntu user space and bash shell, running natively in a Windows 10 cmd.exe console!
 
 This page contains a tool binary image files that allow you to restore your Nexus device's original factory firmware. These binary image files are written for your convenience, for example, if you are a tester and custom firmware you have to often return the phone to its original state.
 

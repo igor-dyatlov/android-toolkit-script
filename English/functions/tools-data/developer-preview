@@ -19,8 +19,13 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/developer-preview-data/developer-preview-ryu
 source $dir/functions/developer-preview-data/developer-preview-angler
 source $dir/functions/developer-preview-data/developer-preview-bullhead
+source $dir/functions/developer-preview-data/developer-preview-shamu
+source $dir/functions/developer-preview-data/developer-preview-fugu
+source $dir/functions/developer-preview-data/developer-preview-volantisg
+source $dir/functions/developer-preview-data/developer-preview-volantis
 
 # Install Factory Images
 function developer-preview {
@@ -39,15 +44,6 @@ function developer-preview {
         'developer-preview-fugu'           'Nexus Player' \
         'developer-preview-volantisg'      'Nexus 9 (LTE)' \
         'developer-preview-volantis'       'Nexus 9 (Wi-Fi)' \
-        'images-hammerhead'     'Nexus 5' \
-        'images-razor'          'Nexus 7 [2013] (Wi-Fi)' \
-        'images-razorg'         'Nexus 7 [2013] (Mobile)' \
-        'images-mantaray'       'Nexus 10' \
-        'images-occam'          'Nexus 4' \
-        'images-nakasi'         'Nexus 7 (Wi-Fi)' \
-        'images-nakasig'        'Nexus 7 (Mobile)' \
-        'images-takju'          'Galaxy Nexus maguro (with Google Wallet)' \
-        'images-yakju'          'Galaxy Nexus maguro' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

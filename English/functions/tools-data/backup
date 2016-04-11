@@ -18,11 +18,43 @@
 # limitations under the License.
 
 function backup-apk {
+  show_warning 'Enter your password on your device.'
   adb backup -apk -obb -shared -all -system -f ./backup-data/Android_System_$(date +%F-%H-%M).ab
 }
 
 function restore-apk {
-  adb restore
+  cd ./backup-data
+  ls
+  show_warning 'Enter your password on your device.'
+  adb restore ./backup-data/Android_System_$(date +%F-%H-%M).ab
+}
+
+function backup-all {
+  adb shell
+  su
+  show_warning 'Enter your password on your device.'
+  dd if=/dev/block/mmcblk0p17 of=/sdcard/data.ext4
+  dd if=/dev/block/mmcblk0p16 of=/sdcard/cache.ext4
+  dd if=/dev/block/mmcblk0p27 of=/sdcard/efs.img
+  dd if=/dev/block/mmcblk0p15 of=/sdcard/system.ext4
+  dd if=/dev/block/mmcblk0p8 of=/sdcard/boot.img
+  dd if=/dev/block/mmcblk0p13 of=/sdcard/recovery.img
+  exit
+  exit
+}
+
+function restore-all {
+  adb shell
+  su
+  show_warning 'Enter your password on your device.'
+  dd if=/sdcard/data.ext4 of=/dev/block/mmcblk0p17
+  dd if=/sdcard/cache.ext4 of=/dev/block/mmcblk0p16
+  dd if=/sdcard/efs.img of=/dev/block/mmcblk0p27
+  dd if=/sdcard/system.ext4 of=/dev/block/mmcblk0p15
+  dd if=/sdcard/boot.img of=/dev/block/mmcblk0p8
+  dd if=/sdcard/recovery.img of /dev/block/mmcblk0p13
+  exit
+  exit
 }
 
 # Backup/Restore

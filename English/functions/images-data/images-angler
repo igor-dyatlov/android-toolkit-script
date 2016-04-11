@@ -28,23 +28,33 @@ function angler-MMB29N {
   show_info 'Install Factory Images...'
   cd angler-mmb29n
   ./flash-all.sh
+  # Timeout
+  sleep 5
+  # Cleanup and finish
+  rm angler*.tgz
+  rm -rf angler*/
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
   images
 }
 
-function angler-MMB29V {
+function angler-MHC19Q {
   # Download
   show_info 'Download Factory Images...'
-  curl -O https://dl.google.com/dl/android/aosp/angler-mmb29v-factory-b7f62e52.tgz
+  curl -O https://dl.google.com/dl/android/aosp/angler-mhc19q-factory-f5a4e7a1.tgz
   # Extract
   show_info 'Extraction Factory Images...'
   tar zxf angler*.tgz
   # Install
   show_info 'Install Factory Images...'
-  cd angler-mmb29v
+  cd angler-mhc19q
   ./flash-all.sh
+  # Timeout
+  sleep 5
+  # Cleanup and finish
+  rm angler*.tgz
+  rm -rf angler*/
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -62,8 +72,8 @@ function images-angler {
       --cancel-button "Go Back" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
       "angler-MMB29N"         "Marshmallow 6.0.0" \
-      "angler-MMB29V"         "Marshmallow 6.0.1" \
-        3>&1 1>&2 2>&3)
+      "angler-MHC19Q"         "Marshmallow 6.0.1" \
+      3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
