@@ -34,6 +34,23 @@ function bullhead-dp1 {
   developer-preview
 }
 
+function bullhead-dp2 {
+  # Download
+  show_info 'Download ...'
+  curl -O http://storage.googleapis.com/androiddevelopers/shareables/preview/bullhead-npc91k-factory-d09b15b5.tgz
+  # Extract
+  show_info 'Extraction Factory Images...'
+  tar zxf bullhead*.tgz
+  # Install
+  show_info 'Install Factory Images...'
+  cd bullhead-npc91k
+  ./flash-all.sh
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  developer-preview
+}
+
 # Nexus 5X
 function developer-preview-bullhead {
     eval `resize`
@@ -45,6 +62,7 @@ function developer-preview-bullhead {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         "bullhead-dp1"         "Developer Preview 1" \
+        "bullhead-dp2"         "Developer Preview 2" \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

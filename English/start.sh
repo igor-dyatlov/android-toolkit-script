@@ -33,6 +33,7 @@ dir="$(dirname "$0")"
 . $dir/functions/recovery
 . $dir/functions/root
 . $dir/functions/search
+. $dir/functions/tools
 
 #----- Fancy Messages -----#
 show_error(){
