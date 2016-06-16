@@ -32,11 +32,11 @@ On your device, go into Settings -> About and find the Build Number and tap on i
 Excellent! Good luck in the firmware    
 
 ## Screenshots
-<img src=".github/img/Screenshots/Screenshot-1.png" width="45%" />
-<img src=".github/img/Screenshots/Screenshot-2.png" width="45%" />
-<img src=".github/img/Screenshots/Screenshot-3.png" width="45%" />
-<img src=".github/img/Screenshots/Screenshot-4.png" width="45%" />
-<img src=".github/img/Screenshots/Screenshot-5.png" width="45%" />
+<img src=".github/img/Screenshot-1.png" width="45%" />
+<img src=".github/img/Screenshot-2.png" width="45%" />
+<img src=".github/img/Screenshot-3.png" width="45%" />
+<img src=".github/img/Screenshot-4.png" width="45%" />
+<img src=".github/img/Screenshot-5.png" width="45%" />
 
 ### Donation
 https://www.paypal.me/IgorDyatlov
