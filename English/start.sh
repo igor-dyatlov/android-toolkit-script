@@ -68,14 +68,14 @@ function main {
         --ok-button "Run" \
         --cancel-button "Quit" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'search'      'Search devices' \
-        'backup'      'Backup/Restore' \
-        'bootloader'  'OEM Lock/Unlock' \
-        'erase'       'Erase sections' \
-        'images'      'Install Factory Images' \
-        'recovery'    'Install CWM/TWRP/Stock recovery' \
-        'root'        'Install Super SU' \
-        'tools'       'Other tools' \
+        search 'Search devices' \
+        backup 'Backup/Restore' \
+        bootloader 'OEM Lock/Unlock' \
+        erase 'Erase sections' \
+        images 'Install Factory Images' \
+        recovery 'Install CWM/TWRP/Stock recovery' \
+        root 'Install Super SU' \
+        tools 'Other tools' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

@@ -167,13 +167,13 @@ function erase {
         --ok-button "Erase" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'erase-all'       'Erase all' \
-        'erase-boot'      'Erase boot section' \
-        'erase-cache'     'Erase cache section' \
-        'erase-radio'     'Erase radio' \
-        'erase-recovery'  'Erase recovery section' \
-        'erase-system'    'Erase system' \
-        'erase-userdata'  'Erase userdata' \
+        erase-all 'Erase all' \
+        erase-boot 'Erase boot section' \
+        erase-cache 'Erase cache section' \
+        erase-radio 'Erase radio' \
+        erase-recovery 'Erase recovery section' \
+        erase-system 'Erase system' \
+        erase-userdata 'Erase userdata' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
