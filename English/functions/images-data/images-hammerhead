@@ -118,8 +118,7 @@ function hammerhead-MOB30H {
   # Back
   cd -
   # Cleanup and finish
-  rmdir hammerhead-mob30h
-  rm -f hammerhead-mob30h-factory-66d165e6.tgz
+  rm -rf hammerhead-mob30h*
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

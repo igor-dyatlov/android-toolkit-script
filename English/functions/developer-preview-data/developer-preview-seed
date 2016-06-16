@@ -17,16 +17,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-function angler-dp1 {
+function seed-dp1 {
   # Download
   show_info 'Download Factory Images...'
-  curl -O http://storage.googleapis.com/androiddevelopers/shareables/preview/angler-npc56w-preview-2834ca3c.tgz
+  curl -O
   # Extract
   show_info 'Extraction Factory Images...'
-  tar zxf angler*.tgz
+  tar zxf seed*.tgz
   # Install
   show_info 'Install Factory Images...'
-  cd angler-npc56w
+  cd seed-npc56w
   ./flash-all.sh
   # Done
   show_success 'Done.'
@@ -34,8 +34,8 @@ function angler-dp1 {
   images
 }
 
-# Nexus 6P
-function developer-preview-angler {
+# Android One
+function developer-preview-seed {
   eval `resize`
   NEXUS6P=$(whiptail \
       --notags \
@@ -44,8 +44,9 @@ function developer-preview-angler {
       --ok-button "Install" \
       --cancel-button "Go Back" \
       $LINES $COLUMNS $(( $LINES - 12 )) \
-      "angler-dp1"         "Developer Preview 1" \
-        3>&1 1>&2 2>&3)
+      "seed-dp1"         "Developer Preview 1" \
+      "seed-dp2"         "Developer Preview 2" \
+      3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then

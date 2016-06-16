@@ -34,49 +34,49 @@ function oemlock {
 
 # Lock
 function flashing-lock {
-  show_info 'Locking...'
-  fastboot flashing lock
-  # Reboot bootloader
-  show_warning 'Devices rebooting'
-  fastboot reboot-bootloader
-  # Timeout
-  sleep 5
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "The bootloader is locked." 8 78
-  bootloader
+ show_info 'Locking...'
+ fastboot flashing lock
+ # Reboot bootloader
+ show_warning 'Devices rebooting'
+ fastboot reboot-bootloader
+ # Timeout
+ sleep 5
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "The bootloader is locked." 8 78
+ bootloader
 }
 
 # OEM Unlock
 function oemunlock {
-  show_info 'Unlocking...'
-  show_warning 'Confirm the action on your Nexus'
-  fastboot oem unlock
-  # Reboot bootloader
-  show_warning 'Devices rebooting'
-  fastboot reboot-bootloader
-  # Timeout
-  sleep 5
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "The bootloader is unlocked." 8 78
-  bootloader
+ show_info 'Unlocking...'
+ show_warning 'Confirm the action on your Nexus'
+ fastboot oem unlock
+ # Reboot bootloader
+ show_warning 'Devices rebooting'
+ fastboot reboot-bootloader
+ # Timeout
+ sleep 5
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "The bootloader is unlocked." 8 78
+ bootloader
 }
 
 # Unlock
 function flashing-unlock {
-  show_info 'Unlocking...'
-  show_warning 'Confirm the action on your Nexus'
-  fastboot flashing unlock
-  # Reboot bootloader
-  show_warning 'Devices rebooting'
-  fastboot reboot-bootloader
-  # Timeout
-  sleep 5
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "The bootloader is unlocked." 8 78
-  bootloader
+ show_info 'Unlocking...'
+ show_warning 'Confirm the action on your Nexus'
+ fastboot flashing unlock
+ # Reboot bootloader
+ show_warning 'Devices rebooting'
+ fastboot reboot-bootloader
+ # Timeout
+ sleep 5
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "The bootloader is unlocked." 8 78
+ bootloader
 }
 # OEM Lock/Unlock
 function bootloader {

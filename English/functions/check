@@ -10,7 +10,7 @@ DEPSUBUNTU="$dir/data/dependencies-ubuntu.list"
 # Dependency Check
 function check {
 
-    case `lsb_release -i` in
+    case `lsb_release -i -s` in
 	    Ubuntu)
     show_info "Checking dependencies..."
     for package in $(cat $DEPSUBUNTU)

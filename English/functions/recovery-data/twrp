@@ -206,7 +206,7 @@ function twrp-hammerhead {
   # Timeout
   sleep 5
   show_info 'Flashing recovery...'
-  fastboot flash recovery twrp-3.0.1-0-hammerhead.img
+  fastboot flash recovery twrp-3.0.2-0-hammerhead.img
   show_success 'Done.'
   # Reboot bootloader
   show_warning 'Devices rebooting'

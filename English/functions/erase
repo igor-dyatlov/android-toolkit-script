@@ -121,40 +121,40 @@ function erase-recovery {
     fastboot reboot-bootloader
     # Timeout
     sleep 5
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
-    erase
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+  erase
 }
 
 # Erase system
 function erase-system {
-    show_info 'Erasing system...'
-    fastboot erase system
-    # Reboot bootloader
-    show_warning 'Devices rebooting'
-    fastboot reboot-bootloader
-    # Timeout
-    sleep 5
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
-    erase
+  show_info 'Erasing system...'
+  fastboot erase system
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+  erase
 }
 
 # Erase userdata
 function erase-userdata {
-    show_info 'Erasing user data...'
-    fastboot erase userdata
-    # Reboot bootloader
-    show_warning 'Devices rebooting'
-    fastboot reboot-bootloader
-    # Timeout
-    sleep 5
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Erasure performed." 8 78
-    erase
+ show_info 'Erasing user data...'
+ fastboot erase userdata
+ # Reboot bootloader
+ show_warning 'Devices rebooting'
+ fastboot reboot-bootloader
+ # Timeout
+ sleep 5
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Erasure performed." 8 78
+ erase
 }
 
 # Erase sections
