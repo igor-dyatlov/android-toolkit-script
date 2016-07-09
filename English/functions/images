@@ -1,22 +1,5 @@
 #!/bin/bash
 
-# Authors:
-#   Igor Dyatlov <dyatlov.igor@gmail.com>
-#
-# Copyright 2016 The Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 dir="$(dirname "$0")"
 
 source $dir/functions/images-data/images-angler
@@ -46,28 +29,28 @@ function images {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'images-ryu'            'Pixel C' \
-        'images-angler'         'Nexus 6P' \
-        'images-bullhead'       'Nexus 5X' \
-        'images-shamu'          'Nexus 6' \
-        'images-fugu'           'Nexus Player' \
-        'images-volantisg'      'Nexus 9 (LTE)' \
-        'images-volantis'       'Nexus 9 (Wi-Fi)' \
-        'images-hammerhead'     'Nexus 5' \
-        'images-razor'          'Nexus 7 [2013] (Wi-Fi)' \
-        'images-razorg'         'Nexus 7 [2013] (Mobile)' \
-        'images-mantaray'       'Nexus 10' \
-        'images-occam'          'Nexus 4' \
-        'images-nakasi'         'Nexus 7 (Wi-Fi)' \
-        'images-nakasig'        'Nexus 7 (Mobile)' \
-        'images-takju'          'Galaxy Nexus maguro (with Google Wallet)' \
-        'images-yakju'          'Galaxy Nexus maguro' \
+        images-ryu 'Pixel C' \
+        images-angler 'Nexus 6P' \
+        images-bullhead 'Nexus 5X' \
+        images-shamu 'Nexus 6' \
+        images-fugu 'Nexus Player' \
+        images-volantisg 'Nexus 9 (LTE)' \
+        images-volantis 'Nexus 9 (Wi-Fi)' \
+        images-hammerhead 'Nexus 5' \
+        images-razor 'Nexus 7 [2013] (Wi-Fi)' \
+        images-razorg 'Nexus 7 [2013] (Mobile)' \
+        images-mantaray 'Nexus 10' \
+        images-occam 'Nexus 4' \
+        images-nakasi 'Nexus 7 (Wi-Fi)' \
+        images-nakasig 'Nexus 7 (Mobile)' \
+        images-takju 'Galaxy Nexus maguro (with Google Wallet)' \
+        images-yakju 'Galaxy Nexus maguro' \
         3>&1 1>&2 2>&3)
 
-    exitstatus=$?
-    if [ $exitstatus = 0 ]; then
-        clear && $IMAGES
-    else
-        clear && main
-    fi
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $IMAGES
+  else
+    clear && main
+  fi
 }

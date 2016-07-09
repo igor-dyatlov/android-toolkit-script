@@ -1,5 +1,5 @@
 # Nexus Fastboot Script
-Android Toolkit for Debian, Ubuntu, Arch Linux, Fedora, openSUSE
+Android Toolkit for Arch Linux (Manjaro), Debian (Knoppix, Ubuntu, Elementary OS, Tails, LinuxMint), Red Hat (Fedora, CentOS, openSUSE)
 ###### Coming soon MacOS X and Windows*
 *An Ubuntu user space and bash shell, running natively in a Windows 10 cmd.exe console!
 
