@@ -37,5 +37,5 @@ Dependencies
 **If you are making an firmware request please edit this template accordingly. If you have another issue, delete all this and carry on.**
 
 - `Distribution Name`
-- `Codename`
+- `Codename` lsb_release -i -s
 - `Dependencies`
