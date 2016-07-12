@@ -513,37 +513,37 @@ function twrp-toro {
 
 # TWRP
 function twrp {
-    eval `resize`
-    TWRP=$(whiptail \
-        --notags \
-        --title "TeamWin - TWRP" \
-        --menu "\nFor what device you want to flash the recovery?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        "twrp-ryu"            "Pixel C" \
-        "twrp-angler"         "Nexus 6P" \
-        "twrp-bullhead"       "Nexus 5X" \
-        "twrp-shamu"          "Nexus 6" \
-        "twrp-fugu"           "Nexus Player" \
-        "twrp-flounder"       "Nexus 9" \
-        "twrp-hammerhead"     "Nexus 5" \
-        "twrp-hammerheadcaf"  "Nexus 5 (CAF)" \
-        "twrp-flo"            "Nexus 7 [2013] (Wi-Fi)" \
-        "twrp-deb"            "Nexus 7 [2013] (Mobile)" \
-        "twrp-manta"          "Nexus 10" \
-        "twrp-mako"           "Nexus 4" \
-        "twrp-grouper"        "Nexus 7 (Wi-Fi)" \
-        "twrp-tilapia"        "Nexus 7 (Mobile)" \
-        "twrp-maguro"         "Galaxy Nexus (GSM/HSPA+)" \
-        "twrp-toroplus"       "Galaxy Nexus (Sprint)" \
-        "twrp-toro"           "Galaxy Nexus (Verizon)" \
-        3>&1 1>&2 2>&3)
+  eval `resize`
+  TWRP=$(whiptail \
+    --notags \
+    --title "TeamWin - TWRP" \
+    --menu "\nFor what device you want to flash the recovery?" \
+    --ok-button "Install" \
+    --cancel-button "Go Back" \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    twrp-ryu "Pixel C" \
+    twrp-angler "Nexus 6P" \
+    twrp-bullhead "Nexus 5X" \
+    twrp-shamu "Nexus 6" \
+    twrp-fugu "Nexus Player" \
+    twrp-flounder "Nexus 9" \
+    twrp-hammerhead "Nexus 5" \
+    twrp-hammerheadcaf "Nexus 5 (CAF)" \
+    twrp-flo "Nexus 7 [2013] (Wi-Fi)" \
+    twrp-deb "Nexus 7 [2013] (Mobile)" \
+    twrp-manta "Nexus 10" \
+    twrp-mako "Nexus 4" \
+    twrp-grouper "Nexus 7 (Wi-Fi)" \
+    twrp-tilapia "Nexus 7 (Mobile)" \
+    twrp-maguro "Galaxy Nexus (GSM/HSPA+)" \
+    twrp-toroplus "Galaxy Nexus (Sprint)" \
+    twrp-toro "Galaxy Nexus (Verizon)" \
+  3>&1 1>&2 2>&3)
 
-    exitstatus=$?
-    if [ $exitstatus = 0 ]; then
-        clear && $TWRP
-    else
-        clear && main
-    fi
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $TWRP
+  else
+    clear && main
+  fi
 }

@@ -20,9 +20,9 @@ Dependencies
 
 **If you are making an firmware request please edit this template accordingly. If you have another issue, delete all this and carry on.**
 
-- `Manufacturer`
-- `Device Name`
-- `Codename`
+- `Manufacturer:`
+- `Device Name:`
+- `Codename:`
 
 ### Recovery image request
 
@@ -36,6 +36,7 @@ Dependencies
 
 **If you are making an firmware request please edit this template accordingly. If you have another issue, delete all this and carry on.**
 
-- `Distribution Name`
-- `Codename` lsb_release -i -s
+- `Distribution Name:`
+- `Codename:`
+  * Please in the console: `lsb_release -i -s` and copy the result
 - `Dependencies`

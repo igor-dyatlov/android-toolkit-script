@@ -61,26 +61,27 @@ function flashing-unlock {
  whiptail --title "Finished" --msgbox "The bootloader is unlocked." 8 78
  bootloader
 }
+
 # OEM Lock/Unlock
 function bootloader {
-    eval `resize`
-    BOOT=$(whiptail \
-        --notags \
-        --title "Unlock and lock the bootloader" \
-        --menu "\nWhat would you like to do?" \
-        --ok-button "Apply" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        'oemlock'             'Lock the bootloader or, for older devices' \
-        'oemunlock'           'Unlock the bootloader or, for older devices' \
-        'flashing-lock'       'Lock the bootloader' \
-        'flashing-unlock'     'Unlock the bootloader' \
-        3>&1 1>&2 2>&3)
+  eval `resize`
+  BOOT=$(whiptail \
+    --notags \
+    --title "Unlock and lock the bootloader" \
+    --menu "\nWhat would you like to do?" \
+    --ok-button "Apply" \
+    --cancel-button "Go Back" \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    oemlock 'Lock the bootloader or, for older devices' \
+    oemunlock 'Unlock the bootloader or, for older devices' \
+    flashing-lock 'Lock the bootloader' \
+    flashing-unlock 'Unlock the bootloader' \
+  3>&1 1>&2 2>&3)
 
-    exitstatus=$?
-    if [ $exitstatus = 0 ]; then
-        clear && $BOOT
-    else
-        clear && main
-    fi
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $BOOT
+  else
+    clear && main
+  fi
 }

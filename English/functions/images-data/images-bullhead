@@ -5,7 +5,7 @@ MDB08M="bullhead-mdb08m-factory-5867cc27.tgz"
   if [ -f "$MDB08M" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead*.tgz
+    tar zxf bullhead-mdb08m*.tgz
     # Install
     show_info 'Install Factory Images...'
     cd bullhead-mdb08m
@@ -15,7 +15,7 @@ MDB08M="bullhead-mdb08m-factory-5867cc27.tgz"
     # Back
     cd -
     # Cleanup and finish
-    rm -rf bullhead*
+    rm -rf bullhead-mdb08m*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -26,7 +26,7 @@ MDB08M="bullhead-mdb08m-factory-5867cc27.tgz"
     wget https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-5867cc27.tgz
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead*.tgz
+    tar zxf bullhead-mdb08m*.tgz
     # Install
     show_info 'Install Factory Images...'
     cd bullhead-mdb08m
@@ -36,7 +36,7 @@ MDB08M="bullhead-mdb08m-factory-5867cc27.tgz"
     # Back
     cd -
     # Cleanup and finish
-    rm -rf bullhead*
+    rm -rf bullhead-mdb08m*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -49,7 +49,7 @@ MHC19Q="bullhead-mhc19q-factory-22ba5e5a.tgz"
   if [ -f "$MHC19Q" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead*.tgz
+    tar zxf bullhead-mhc19q*.tgz
     # Install
     show_info 'Install Factory Images...'
     cd bullhead-mhc19q
@@ -59,7 +59,7 @@ MHC19Q="bullhead-mhc19q-factory-22ba5e5a.tgz"
     # Back
     cd -
     # Cleanup and finish
-    rm -rf bullhead*
+    rm -rf bullhead-mhc19q*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -70,7 +70,7 @@ MHC19Q="bullhead-mhc19q-factory-22ba5e5a.tgz"
     wget https://dl.google.com/dl/android/aosp/bullhead-mhc19q-factory-22ba5e5a.tgz
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead*.tgz
+    tar zxf bullhead-mhc19q*.tgz
     # Install
     show_info 'Install Factory Images...'
     cd bullhead-mhc19q
@@ -80,7 +80,7 @@ MHC19Q="bullhead-mhc19q-factory-22ba5e5a.tgz"
     # Back
     cd -
     # Cleanup and finish
-    rm -rf bullhead*
+    rm -rf bullhead-mhc19q*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -98,7 +98,7 @@ function images-bullhead {
     --ok-button 'Install' \
     --cancel-button 'Go Back' \
   $LINES $COLUMNS $(( $LINES - 12 )) \
-    bullhead-MDB08M 'Marshmallow 6.0.0' \
+    bullhead-MDB08M 'Marshmallow 6.0' \
     bullhead-MHC19Q 'Marshmallow 6.0.1' \
   3>&1 1>&2 2>&3)
 

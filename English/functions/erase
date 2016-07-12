@@ -142,27 +142,27 @@ function erase-userdata {
 
 # Erase sections
 function erase {
-    eval `resize`
-    ERASE=$(whiptail \
-        --notags \
-        --title "Erase sections" \
-        --menu "\nWhat would you like to do?" \
-        --ok-button "Erase" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        erase-all 'Erase all' \
-        erase-boot 'Erase boot section' \
-        erase-cache 'Erase cache section' \
-        erase-radio 'Erase radio' \
-        erase-recovery 'Erase recovery section' \
-        erase-system 'Erase system' \
-        erase-userdata 'Erase userdata' \
-        3>&1 1>&2 2>&3)
+  eval `resize`
+  ERASE=$(whiptail \
+    --notags \
+    --title "Erase sections" \
+    --menu "\nWhat would you like to do?" \
+    --ok-button "Erase" \
+    --cancel-button "Go Back" \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    erase-all 'Erase all' \
+    erase-boot 'Erase boot section' \
+    erase-cache 'Erase cache section' \
+    erase-radio 'Erase radio' \
+    erase-recovery 'Erase recovery section' \
+    erase-system 'Erase system' \
+    erase-userdata 'Erase userdata' \
+  3>&1 1>&2 2>&3)
 
-    exitstatus=$?
-    if [ $exitstatus = 0 ]; then
-        clear && $ERASE
-    else
-        clear && main
-    fi
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $ERASE
+  else
+    clear && main
+  fi
 }

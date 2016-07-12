@@ -1,118 +1,223 @@
 #!/bin/bash
 
 function shamu-LRX21O {
-  # Download
-  show_info 'Download Factory Images...'
-  wget https://dl.google.com/dl/android/aosp/shamu-lrx21o-factory-e028f5ea.tgz
-  # Extract
-  show_info 'Extraction Factory Images...'
-  tar zxf shamu*.tgz
-  # Install
-  show_info 'Install Factory Images...'
-  cd shamu-lrx21o
-  ./flash-all.sh
-  # Timeout
-  sleep 5
-  # Back
-  cd -
-  # Cleanup and finish
-  rm -rf shamu*
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
+LRX21O="shamu-lrx21o-factory-e028f5ea.tgz"
+  if [ -f "$LRX21O" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-lrx21o*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-lrx21o
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-lrx21o*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/shamu-lrx21o-factory-e028f5ea.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-lrx21o*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-lrx21o
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-lrx21o*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
 }
 
 function shamu-LRX22C {
-  # Download
-  show_info 'Download Factory Images...'
-  wget https://dl.google.com/dl/android/aosp/shamu-lrx22c-factory-ff173fc6.tgz
-  # Extract
-  show_info 'Extraction Factory Images...'
-  tar zxf shamu*.tgz
-  # Install
-  show_info 'Install Factory Images...'
-  cd shamu-lrx22c
-  ./flash-all.sh
-  # Timeout
-  sleep 5
-  # Back
-  cd -
-  # Cleanup and finish
-  rm -rf shamu*
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
+LRX22C="shamu-lrx22c-factory-ff173fc6.tgz"
+  if [ -f "$LRX22C" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-lrx22c*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-lrx22c
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-lrx22c*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/shamu-lrx22c-factory-ff173fc6.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-lrx22c*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-lrx22c
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-lrx22c*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
 }
 
 function shamu-LMY47I {
-  # Download
-  show_info 'Download Factory Images...'
-  wget https://dl.google.com/dl/android/aosp/shamu-lmy47i-factory-c8afc588.tgz
-  # Extract
-  show_info 'Extraction Factory Images...'
-  tar zxf shamu*.tgz
-  # Install
-  show_info 'Install Factory Images...'
-  cd shamu-lmy47i
-  ./flash-all.sh
-  # Timeout
-  sleep 5
-  # Back
-  cd -
-  # Cleanup and finish
-  rm -rf shamu*
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
+LMY47I="shamu-lmy47i-factory-c8afc588.tgz"
+  if [ -f "$LMY47I" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-lmy47i*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-lmy47i
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-lmy47i*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/shamu-lmy47i-factory-c8afc588.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-lmy47i*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-lmy47i
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-lmy47i*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
 }
 
 function shamu-LMY48Y {
-  # Download
-  show_info 'Download Factory Images...'
-  wget https://dl.google.com/dl/android/aosp/shamu-lmy48y-factory-df0504a8.tgz
-  # Extract
-  show_info 'Extraction Factory Images...'
-  tar zxf shamu*.tgz
-  # Install
-  show_info 'Install Factory Images...'
-  cd shamu-lmy48y
-  ./flash-all.sh
-  # Timeout
-  sleep 5
-  # Back
-  cd -
-  # Cleanup and finish
-  rm -rf shamu*
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
+LMY48Y="shamu-lmy48y-factory-df0504a8.tgz"
+  if [ -f "$LMY48Y" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-lmy48y*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-lmy48y
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-lmy48y*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/shamu-lmy48y-factory-df0504a8.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-lmy48y*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-lmy48y
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-lmy48y*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
 }
 
 function shamu-MRA58X {
-  # Download
-  show_info 'Download Factory Images...'
-  wget https://dl.google.com/dl/android/aosp/shamu-mra58x-factory-7ddc0948.tgz
-  # Extract
-  show_info 'Extraction Factory Images...'
-  tar zxf shamu*.tgz
-  # Install
-  show_info 'Install Factory Images...'
-  cd shamu-mra58x
-  ./flash-all.sh
-  # Timeout
-  sleep 5
-  # Back
-  cd -
-  # Cleanup and finish
-  rm -rf shamu*
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
+MRA58X="shamu-mra58x-factory-7ddc0948.tgz"
+  if [ -f "$MRA58X" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-mra58x*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-mra58x
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-mra58x*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/shamu-mra58x-factory-7ddc0948.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf shamu-mra58x*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd shamu-mra58x
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf shamu-mra58x*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
 }
 
 function shamu-MOB30O {
@@ -120,7 +225,7 @@ MOB30O="shamu-mob30o-factory-e90fd025.tgz"
   if [ -f "$MOB30O" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf shamu*.tgz
+    tar zxf shamu-mob30o*.tgz
     # Install
     show_info 'Install Factory Images...'
     cd shamu-mob30o
@@ -130,7 +235,7 @@ MOB30O="shamu-mob30o-factory-e90fd025.tgz"
     # Back
     cd -
     # Cleanup and finish
-    rm -rf shamu*
+    rm -rf shamu-mob30o*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -141,7 +246,7 @@ MOB30O="shamu-mob30o-factory-e90fd025.tgz"
     wget https://dl.google.com/dl/android/aosp/shamu-mob30o-factory-e90fd025.tgz
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf shamu*.tgz
+    tar zxf shamu-mob30o*.tgz
     # Install
     show_info 'Install Factory Images...'
     cd shamu-mob30o
@@ -151,7 +256,7 @@ MOB30O="shamu-mob30o-factory-e90fd025.tgz"
     # Back
     cd -
     # Cleanup and finish
-    rm -rf shamu*
+    rm -rf shamu-mob30o*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -164,16 +269,16 @@ function images-shamu {
   eval `resize`
   NEXUS6=$(whiptail \
     --notags \
-    --title "Nexus 6" \
-    --menu "\nWhat is the firmware version you want to install?" \
-    --ok-button "Install" \
-    --cancel-button "Go Back" \
+    --title 'Nexus 6' \
+    --menu '\nWhat is the firmware version you want to install?' \
+    --ok-button 'Install' \
+    --cancel-button 'Go Back' \
   $LINES $COLUMNS $(( $LINES - 12 )) \
-    shamu-LRX21O 'Lollipop 5.0.0' \
+    shamu-LRX21O 'Lollipop 5.0' \
     shamu-LRX22C 'Lollipop 5.0.1' \
     shamu-LMY47I 'Lollipop 5.1.0' \
     shamu-LMY48Y 'Lollipop 5.1.1' \
-    shamu-MRA58X 'Marshmallow 6.0.0' \
+    shamu-MRA58X 'Marshmallow 6.0' \
     shamu-MOB30O 'Marshmallow 6.0.1' \
   3>&1 1>&2 2>&3)
 

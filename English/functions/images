@@ -26,26 +26,26 @@ function images {
         --notags \
         --title "Install Factory Images" \
         --menu "\nWhich device you want to flash?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        images-ryu 'Pixel C' \
-        images-angler 'Nexus 6P' \
-        images-bullhead 'Nexus 5X' \
-        images-shamu 'Nexus 6' \
-        images-fugu 'Nexus Player' \
-        images-volantisg 'Nexus 9 (LTE)' \
-        images-volantis 'Nexus 9 (Wi-Fi)' \
-        images-hammerhead 'Nexus 5' \
-        images-razor 'Nexus 7 [2013] (Wi-Fi)' \
-        images-razorg 'Nexus 7 [2013] (Mobile)' \
-        images-mantaray 'Nexus 10' \
-        images-occam 'Nexus 4' \
-        images-nakasi 'Nexus 7 (Wi-Fi)' \
-        images-nakasig 'Nexus 7 (Mobile)' \
-        images-takju 'Galaxy Nexus maguro (with Google Wallet)' \
-        images-yakju 'Galaxy Nexus maguro' \
-        3>&1 1>&2 2>&3)
+--ok-button "Install" \
+--cancel-button "Go Back" \
+$LINES $COLUMNS $(( $LINES - 12 )) \
+images-ryu 'Pixel C' \
+images-angler 'Nexus 6P' \
+images-bullhead 'Nexus 5X' \
+images-shamu 'Nexus 6' \
+images-fugu 'Nexus Player' \
+images-volantisg 'Nexus 9 (LTE)' \
+images-volantis 'Nexus 9 (Wi-Fi)' \
+images-hammerhead 'Nexus 5' \
+images-razor 'Nexus 7 [2013] (Wi-Fi)' \
+images-razorg 'Nexus 7 [2013] (Mobile)' \
+images-mantaray 'Nexus 10' \
+images-occam 'Nexus 4' \
+images-nakasi 'Nexus 7 (Wi-Fi)' \
+images-nakasig 'Nexus 7 (Mobile)' \
+images-takju 'Galaxy Nexus maguro (with Google Wallet)' \
+images-yakju 'Galaxy Nexus maguro' \
+3>&1 1>&2 2>&3)
 
 exitstatus=$?
   if [ $exitstatus = 0 ]; then

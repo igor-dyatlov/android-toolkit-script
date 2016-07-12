@@ -1,56 +1,201 @@
 #!/bin/bash
 
-# Authors:
-#   Igor Dyatlov <dyatlov.igor@gmail.com>
-#
-# Copyright 2016 The Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-function - {
-  # Download
-  show_info 'Download Factory Images...'
-  curl -O
-  # Extract
-  show_info 'Extraction Factory Images...'
-  tar zxf *.tgz
-  # Install
-  show_info 'Install Factory Images...'
-  cd -
-  ./flash-all.sh
-  # Done
-  show_success 'Done.'
-  whiptail --title "Finished" --msgbox "Installation complete." 8 78
-  images
+function yakju-IMM76I {
+IMM76I="yakju-imm76i-factory-8001e72f.tgz"
+  if [ -f "$IMM76I" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf yakju-imm76i*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-imm76i
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-imm76i*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/yakju-imm76i-factory-8001e72f.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf yakju-imm76i*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-imm76i
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-imm76i*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
 }
 
-#
-function images- {
-  eval `resize`
-  =$(whiptail \
-      --notags \
-      --title " " \
-      --menu "\nFor what device you want to flash the recovery?" \
-      --ok-button "Install" \
-      --cancel-button "Go Back" \
-      $LINES $COLUMNS $(( $LINES - 12 )) \
-      "yakju-"         " " \
-      3>&1 1>&2 2>&3)
+function yakju-JZO54K {
+JZO54K="occam-ktu84p-factory-b6ac3ad6.tgz"
+  if [ -f "$JZO54K" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf yakju-jzo54k*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jzo54k
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jzo54k*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/yakju-jzo54k-factory-92ff9457.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf yakju-jzo54k*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jzo54k
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jzo54k*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
 
-    exitstatus=$?
-    if [ $exitstatus = 0 ]; then
-        clear && $
-    else
-        clear && main
-    fi
+function yakju-JDQ39 {
+JDQ39="yakju-jdq39-factory-b2ebb5f3.tgz"
+  if [ -f "$JDQ39" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf yakju-jdq39*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jdq39
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jdq39*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/yakju-jdq39-factory-b2ebb5f3.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf yakju-jdq39*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jdq39
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jdq39*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function yakju-JWR66Y {
+JWR66Y="yakju-jwr66y-factory-09207065.tgz"
+  if [ -f "$JWR66Y" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf yakju-jwr66y*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jwr66y
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jwr66y*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/yakju-jwr66y-factory-09207065.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf yakju-jwr66y*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jwr66y
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jwr66y*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+# Galaxy Nexus (GSM/HSPA+)
+function images-yakju {
+  eval `resize`
+  NEXUS3=$(whiptail \
+    --notags \
+    --title 'Galaxy Nexus (GSM/HSPA+)' \
+    --menu '\nWhat is the firmware version you want to install?' \
+    --ok-button 'Install' \
+    --cancel-button 'Go Back' \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    yakju-IMM76I 'Ice Cream Sandwich 4.0.4 ' \
+    yakju-JZO54K 'Jelly Bean 4.1.2 ' \
+    yakju-JDQ39 'Jelly Bean 4.2.2 ' \
+    yakju-JWR66Y 'Jelly Bean 4.3' \
+  3>&1 1>&2 2>&3)
+
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $NEXUS3
+  else
+    clear && main
+  fi
 }
