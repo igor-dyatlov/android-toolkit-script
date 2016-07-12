@@ -6,6 +6,14 @@ DEPS="$dir/data/dependencies-opensuse.list"
 DEPS="$dir/data/dependencies-archlinux.list"
 DEPSUBUNTU="$dir/data/dependencies-ubuntu.list"
 
+# Check if command failed, if true abort
+function check_fail {
+EXITSTATUS=$1
+  if [[ $EXITSTATUS != 0 ]]; then
+    show_error "Something may have went wrong during the last command. Returning."
+    sleep 3s && check
+  fi
+}
 
 # Dependency Check
 function check {
@@ -211,33 +219,36 @@ done
     show_info "Checking dependencies..."
     for package in $(cat $DEPSUBUNTU)
     do
-      PKGCHECK=$(dpkg-query -W --showformat='${Status}\n' $package|grep "install ok installed")
+    PKGCHECK=$(dpkg-query -W --showformat='${Status}\n' $package|grep "install ok installed")
     if [ "" == "$PKGCHECK" ]; then
-      show_info "This script makes use of '$package' and it is not present on your system."
+      show_info $NAME 'is not installed. Proceeding'
+      show_info "This script requires '$package' and it is not present on your system."
       show_question 'Would you like to install it to continue? (Y)es, (N)o : ' && read REPLY
       echo ''
-    case $REPLY in
-# Positive action
-[Yy]* )
-show_warning 'Requires root privileges'
-sudo apt-get --force-yes --yes install $package
-show_success 'Done. Proceeding.'
-main
-;;
-# Negative action
-[Nn]* )
-show_info "Eiting.."
-clear && exit 99
-;;
-# Error
-* )
-clear && show_error '\aSorry, try again.' && check
-;;
-esac
-else
-show_info "'$package' is installed. Proceeding"
-fi
-done
+      case $REPLY in
+      # Positive action
+      [Yy]* )
+          show_warning 'Requires root privileges'
+          sudo apt-get --force-yes -y install $package
+          # Failure check
+          check_fail
+          show_success "Package '$package' installed. Proceeding."
+          ;;
+      # Negative action
+      [Nn]* )
+          show_info "Exiting..."
+          clear && exit 99
+          ;;
+      # Error
+      * )
+          clear && show_error '\aSorry, try again.' && check
+          ;;
+      esac
+      else
+      show_success "Dependency '$package' is installed."
+      fi
+      done
+      show_info "Proceeding."
 ;;
 *)
 show_error "The script is not ready for your system." && main
