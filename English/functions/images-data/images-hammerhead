@@ -220,22 +220,22 @@ MRA58N="hammerhead-mra58n-factory-aeca4139.tgz"
   fi
 }
 
-function hammerhead-MOB30P {
-MOB30P="hammerhead-mob30p-factory-6ceae57a.tgz"
-  if [ -f "$MOB30P" ]; then
+function hammerhead-MOB30Y {
+MOB30Y="hammerhead-mob30y-factory-7f05cd7f.tgz"
+  if [ -f "$MOB30Y" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-mob30p*.tgz
+    tar zxf hammerhead-mob30y*.tgz
     # Install
     show_info 'Install Factory Images...'
-    cd hammerhead-mob30p
+    cd hammerhead-mob30y
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf hammerhead-mob30p*
+    rm -rf hammerhead-mob30y*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -243,20 +243,20 @@ MOB30P="hammerhead-mob30p-factory-6ceae57a.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/hammerhead-mob30p-factory-6ceae57a.tgz
+    wget https://dl.google.com/dl/android/aosp/hammerhead-mob30y-factory-7f05cd7f.tgz
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-mob30p*.tgz
+    tar zxf hammerhead-mob30y*.tgz
     # Install
     show_info 'Install Factory Images...'
-    cd hammerhead-mob30p
+    cd hammerhead-mob30y
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf hammerhead-mob30p*
+    rm -rf hammerhead-mob30y*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -279,7 +279,7 @@ function images-hammerhead {
     hammerhead-LRX21O 'Lollipop 5.0' \
     hammerhead-LMY48M 'Lollipop 5.1.1' \
     hammerhead-MRA58N 'Marshmallow 6.0' \
-    hammerhead-MOB30P 'Marshmallow 6.0.1' \
+    hammerhead-MOB30Y 'Marshmallow 6.0.1' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?
