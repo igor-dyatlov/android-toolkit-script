@@ -185,6 +185,50 @@ MOB30P="fugu-mob30p-factory-08696c8b.tgz"
   fi
 }
 
+function fugu-NRD90M {
+NRD90M="fugu-nrd90m-factory-ecb8ca56.tgz"
+  if [ -f "$NRD90M" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf fugu-nrd90m*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd fugu-nrd90m
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf fugu-nrd90m*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/fugu-nrd90m-factory-ecb8ca56.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf fugu-nrd90m*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd fugu-nrd90m
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf fugu-nrd90m*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
 # Nexus Player
 function images-fugu {
   eval `resize`
@@ -199,6 +243,7 @@ function images-fugu {
     fugu-LMY48N 'Lollipop 5.1.1' \
     fugu-MRA58N 'Marshmallow 6.0' \
     fugu-MOB30P 'Marshmallow 6.0.1' \
+    fugu-NRD90M 'Nougat 7.0' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?

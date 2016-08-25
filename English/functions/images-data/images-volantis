@@ -1,18 +1,291 @@
 #!/bin/bash
 
-# Authors:
-#   Igor Dyatlov <dyatlov.igor@gmail.com>
-#
-# Copyright 2016 The Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+function volantis-LRX21R {
+LRX21R="volantis-lrx21r-factory-ac87eba2.tgz"
+  if [ -f "$LRX21R" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-lrx21r*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-lrx21r
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-lrx21r*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/volantis-lrx21r-factory-ac87eba2.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-lrx21r*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-lrx21r
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-lrx21r*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function volantis-LRX22L {
+LRX22L="volantis-lrx22l-factory-62276615.tgz"
+  if [ -f "$LRX22L" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-lrx22l*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-lrx22l
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-lrx22l*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/volantis-lrx22l-factory-62276615.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-lrx22l*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-lrx22l
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-lrx22l*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function volantis-LMY48T {
+LMY48T="volantis-lmy48t-factory-adc99323.tgz"
+  if [ -f "$LMY48T" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-lmy48t*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-lmy48t
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-lmy48t*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/volantis-lmy48t-factory-adc99323.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-lmy48t*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-lmy48t
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-lmy48t*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function volantis-MRA58N {
+MRA58N="volantis-mra58n-factory-80f36936.tgz"
+  if [ -f "$MRA58N" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-mra58n*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-mra58n
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-mra58n*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/volantis-mra58n-factory-80f36936.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-mra58n*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-mra58n
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-mra58n*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function volantis-MOB30W {
+MOB30W="volantis-mob30w-factory-ca056581.tgz"
+  if [ -f "$MOB30W" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-mob30w*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-mob30w
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-mob30w*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/volantis-mob30w-factory-ca056581.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-mob30w*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-mob30w
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-mob30w*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function volantis-NRD90M {
+NRD90M="volantis-nrd90m-factory-b718f71b.tgz"
+  if [ -f "$NRD90M" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-nrd90m*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-nrd90m
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-nrd90m*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/volantis-nrd90m-factory-b718f71b.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf volantis-nrd90m*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd volantis-nrd90m
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf volantis-nrd90m*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+# Nexus 9 (Wi-Fi)
+function images-volantis {
+  eval `resize`
+  NEXUS9W=$(whiptail \
+    --notags \
+    --title 'Nexus 9 (Wi-Fi)' \
+    --menu '\nWhat is the firmware version you want to install?' \
+    --ok-button 'Install' \
+    --cancel-button 'Go Back' \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    volantis-LRX21R 'Lollipop 5.0' \
+    volantis-LRX22L 'Lollipop 5.0.2' \
+    volantis-LMY48T 'Lollipop 5.1.1' \
+    volantis-MRA58N 'Marshmallow 6.0' \
+    volantis-MOB30W 'Marshmallow 6.0.1' \
+    volantis-NRD90M 'Nougat 7.0' \
+  3>&1 1>&2 2>&3)
+
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $NEXUS9W
+  else
+    clear && main
+  fi
+}

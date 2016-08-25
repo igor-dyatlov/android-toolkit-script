@@ -44,6 +44,50 @@ MXC89H="ryu-mxc89h-factory-f4c33d9c.tgz"
   fi
 }
 
+function ryu-NRD90M {
+NRD90M="ryu-nrd90m-factory-6aec2222.tgz"
+  if [ -f "$NRD90M" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf ryu*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd ryu-nrd90m
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf ryu*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/ryu-nrd90m-factory-6aec2222.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf ryu*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd ryu-nrd90m
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf ryu*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
 # Pixel C
 function images-ryu {
   eval `resize`
@@ -55,6 +99,7 @@ function images-ryu {
     --cancel-button 'Go Back' \
   $LINES $COLUMNS $(( $LINES - 12 )) \
     ryu-MXC89H 'Marshmallow 6.0.1' \
+    ryu-NRD90M 'Nougat 7.0' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?
