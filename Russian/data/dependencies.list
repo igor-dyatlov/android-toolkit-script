@@ -1,8 +1,0 @@
-android-tools-adb
-android-tools-fastboot
-android-tools-fsutils
-curl
-software-properties-common
-wget
-whiptail
-xterm
