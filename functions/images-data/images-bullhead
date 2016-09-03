@@ -88,6 +88,50 @@ MHC19Q="bullhead-mhc19q-factory-22ba5e5a.tgz"
   fi
 }
 
+function bullhead-NRD90M {
+NRD90M="bullhead-nrd90m-factory-d215f148.tgz"
+  if [ -f "$NRD90M" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf bullhead-nrd90m*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd bullhead-nrd90m
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf bullhead-nrd90m*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download ...'
+    wget https://dl.google.com/dl/android/aosp/bullhead-nrd90m-factory-d215f148.tgz
+    # Extract
+    show_info 'Extraction Factory Images...'
+    tar zxf bullhead-nrd90m*.tgz
+    # Install
+    show_info 'Install Factory Images...'
+    cd bullhead-nrd90m
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf bullhead-nrd90m*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
 # Nexus 5X
 function images-bullhead {
   eval `resize`
@@ -100,6 +144,7 @@ function images-bullhead {
   $LINES $COLUMNS $(( $LINES - 12 )) \
     bullhead-MDB08M 'Marshmallow 6.0' \
     bullhead-MHC19Q 'Marshmallow 6.0.1' \
+    bullhead-NRD90M 'Nougat 7.0' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?
