@@ -1,7 +1,5 @@
 # Nexus Toolkit Script
 Android Toolkit for Arch Linux (Manjaro, VeltOS), Debian (Knoppix, Ubuntu, Elementary OS, Tails, LinuxMint), Red Hat (Fedora, CentOS, openSUSE)
-###### Coming soon MacOS X and Windows*
-*An Ubuntu user space and bash shell, running natively in a Windows 10 cmd.exe console!
 
 This page contains a tool binary image files that allow you to restore your Nexus device's original factory firmware. These binary image files are written for your convenience, for example, if you are a tester and custom firmware you have to often return the phone to its original state.
 
@@ -17,9 +15,9 @@ And also, this tool allows you to set custom recovery, lock/unlock bootloader an
 
 Run in the console:
 
-    git clone https://github.com/igor-dyatlov/nexus-fastboot-script.git
+    git clone https://github.com/igor-dyatlov/nexus-toolkit-script.git
 
- Alternatively you can [download](https://github.com/igor-dyatlov/nexus-fastboot-script/archive/master.zip) this repository.
+ Alternatively you can [download](https://github.com/igor-dyatlov/nexus-toolkit-script/archive/master.zip) this repository.
 
  - Connect your device to your computer over USB
 
