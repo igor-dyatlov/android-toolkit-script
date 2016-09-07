@@ -1,11 +1,11 @@
 #!/bin/bash
 
 function hammerhead-KRT16M {
-KRT16M="hammerhead-krt16m-factory-bd9c39de.tgz"
+KRT16M="hammerhead-krt16m-factory-bd9c39de.zip"
   if [ -f "$KRT16M" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-krt16m*.tgz
+    unzip hammerhead-krt16m*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-krt16m
@@ -23,10 +23,10 @@ KRT16M="hammerhead-krt16m-factory-bd9c39de.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/hammerhead-krt16m-factory-bd9c39de.tgz
+    wget https://dl.google.com/dl/android/aosp/hammerhead-krt16m-factory-bd9c39de.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-krt16m*.tgz
+    unzip hammerhead-krt16m*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-krt16m
@@ -45,11 +45,11 @@ KRT16M="hammerhead-krt16m-factory-bd9c39de.tgz"
 }
 
 function hammerhead-KTU84P {
-KTU84P="hammerhead-ktu84p-factory-35ea0277.tgz"
+KTU84P="hammerhead-ktu84p-factory-35ea0277.zip"
   if [ -f "$KTU84P" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-ktu84p*.tgz
+    unzip hammerhead-ktu84p*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-ktu84p
@@ -67,10 +67,10 @@ KTU84P="hammerhead-ktu84p-factory-35ea0277.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/hammerhead-ktu84p-factory-35ea0277.tgz
+    wget https://dl.google.com/dl/android/aosp/hammerhead-ktu84p-factory-35ea0277.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-ktu84p*.tgz
+    unzip hammerhead-ktu84p*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-ktu84p
@@ -89,11 +89,11 @@ KTU84P="hammerhead-ktu84p-factory-35ea0277.tgz"
 }
 
 function hammerhead-LRX21O {
-LRX21O="hammerhead-lrx21o-factory-01315e08.tgz"
+LRX21O="hammerhead-lrx21o-factory-01315e08.zip"
   if [ -f "$LRX21O" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-lrx21o*.tgz
+    unzip hammerhead-lrx21o*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-lrx21o
@@ -111,10 +111,10 @@ LRX21O="hammerhead-lrx21o-factory-01315e08.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/hammerhead-lrx21o-factory-01315e08.tgz
+    wget https://dl.google.com/dl/android/aosp/hammerhead-lrx21o-factory-01315e08.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-lrx21o*.tgz
+    unzip hammerhead-lrx21o*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-lrx21o
@@ -133,11 +133,11 @@ LRX21O="hammerhead-lrx21o-factory-01315e08.tgz"
 }
 
 function hammerhead-LMY48M {
-LMY48M="hammerhead-lmy48m-factory-bf3c82fd.tgz"
+LMY48M="hammerhead-lmy48m-factory-bf3c82fd.zip"
   if [ -f "$LMY48M" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-lmy48m*.tgz
+    unzip hammerhead-lmy48m*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-lmy48m
@@ -155,10 +155,10 @@ LMY48M="hammerhead-lmy48m-factory-bf3c82fd.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/hammerhead-lmy48m-factory-bf3c82fd.tgz
+    wget https://dl.google.com/dl/android/aosp/hammerhead-lmy48m-factory-bf3c82fd.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-lmy48m*.tgz
+    unzip hammerhead-lmy48m*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-lmy48m
@@ -177,11 +177,11 @@ LMY48M="hammerhead-lmy48m-factory-bf3c82fd.tgz"
 }
 
 function hammerhead-MRA58N {
-MRA58N="hammerhead-mra58n-factory-aeca4139.tgz"
+MRA58N="hammerhead-mra58n-factory-30da525d.zip"
   if [ -f "$MRA58N" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-mra58n*.tgz
+    unzip hammerhead-mra58n*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-mra58n
@@ -199,10 +199,10 @@ MRA58N="hammerhead-mra58n-factory-aeca4139.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/hammerhead-mra58n-factory-aeca4139.tgz
+    wget https://dl.google.com/dl/android/aosp/hammerhead-mra58n-factory-30da525d.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-mra58n*.tgz
+    unzip hammerhead-mra58n*.zip
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-mra58n
@@ -220,22 +220,22 @@ MRA58N="hammerhead-mra58n-factory-aeca4139.tgz"
   fi
 }
 
-function hammerhead-MOB30Y {
-MOB30Y="hammerhead-mob30y-factory-7f05cd7f.tgz"
-  if [ -f "$MOB30Y" ]; then
+function hammerhead-MOB31E {
+MOB31E="hammerhead-mob31e-factory-90504514.zip"
+  if [ -f "$MOB31E" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-mob30y*.tgz
+    unzip hammerhead-mob31e*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd hammerhead-mob30y
+    cd hammerhead-mob31e
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf hammerhead-mob30y*
+    rm -rf hammerhead-mob31e*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -243,20 +243,20 @@ MOB30Y="hammerhead-mob30y-factory-7f05cd7f.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/hammerhead-mob30y-factory-7f05cd7f.tgz
+    wget https://dl.google.com/dl/android/aosp/hammerhead-mob31e-factory-90504514.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf hammerhead-mob30y*.tgz
+    unzip hammerhead-mob31e*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd hammerhead-mob30y
+    cd hammerhead-mob31e
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf hammerhead-mob30y*
+    rm -rf hammerhead-mob31e*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -279,7 +279,7 @@ function images-hammerhead {
     hammerhead-LRX21O 'Lollipop 5.0' \
     hammerhead-LMY48M 'Lollipop 5.1.1' \
     hammerhead-MRA58N 'Marshmallow 6.0' \
-    hammerhead-MOB30Y 'Marshmallow 6.0.1' \
+    hammerhead-MOB31E 'Marshmallow 6.0.1' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?

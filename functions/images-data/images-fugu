@@ -1,14 +1,11 @@
 #!/bin/bash
 
 function fugu-LRX21V {
-LRX21V="fugu-lrx21v-factory-64050f47.tgz"
+LRX21V="fugu-lrx21v-factory-2f283d96.zip"
   if [ -f "$LRX21V" ]; then
-    # Download
-    show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/fugu-lrx21v-factory-64050f47.tgz
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-lrx21v*.tgz
+    unzip fugu-lrx21v*.zip
     # Install
     show_info 'Install Factory Images...'
     cd fugu-lrx21v
@@ -26,10 +23,10 @@ LRX21V="fugu-lrx21v-factory-64050f47.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/fugu-lrx21v-factory-64050f47.tgz
+    wget https://dl.google.com/dl/android/aosp/fugu-lrx21v-factory-2f283d96.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-lrx21v*.tgz
+    unzip fugu-lrx21v*.zip
     # Install
     show_info 'Install Factory Images...'
     cd fugu-lrx21v
@@ -48,14 +45,11 @@ LRX21V="fugu-lrx21v-factory-64050f47.tgz"
 }
 
 function fugu-LMY48N {
-LMY48N="fugu-lmy48n-factory-3b9d8638.tgz"
+LMY48N="fugu-lmy48n-factory-80ab3689.zip"
   if [ -f "$LMY48N" ]; then
-    # Download
-    show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/fugu-lmy48n-factory-3b9d8638.tgz
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-lmy48n*.tgz
+    unzip fugu-lmy48n*.zip
     # Install
     show_info 'Install Factory Images...'
     cd fugu-lmy48n
@@ -73,10 +67,10 @@ LMY48N="fugu-lmy48n-factory-3b9d8638.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/fugu-lmy48n-factory-3b9d8638.tgz
+    wget https://dl.google.com/dl/android/aosp/fugu-lmy48n-factory-80ab3689.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-lmy48n*.tgz
+    unzip fugu-lmy48n*.zip
     # Install
     show_info 'Install Factory Images...'
     cd fugu-lmy48n
@@ -95,14 +89,11 @@ LMY48N="fugu-lmy48n-factory-3b9d8638.tgz"
 }
 
 function fugu-MRA58N {
-MRA58N="fugu-mra58n-factory-8517d819.tgz"
+MRA58N="fugu-mra58n-factory-3b5bccdc.zip"
   if [ -f "$MRA58N" ]; then
-    # Download
-    show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/fugu-mra58n-factory-8517d819.tgz
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-mra58n*.tgz
+    unzip fugu-mra58n*.zip
     # Install
     show_info 'Install Factory Images...'
     cd fugu-mra58n
@@ -120,10 +111,10 @@ MRA58N="fugu-mra58n-factory-8517d819.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/fugu-mra58n-factory-8517d819.tgz
+    wget https://dl.google.com/dl/android/aosp/fugu-mra58n-factory-3b5bccdc.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-mra58n*.tgz
+    unzip fugu-mra58n*.zip
     # Install
     show_info 'Install Factory Images...'
     cd fugu-mra58n
@@ -141,22 +132,22 @@ MRA58N="fugu-mra58n-factory-8517d819.tgz"
   fi
 }
 
-function fugu-MOB30P {
-MOB30P="fugu-mob30p-factory-08696c8b.tgz"
-  if [ -f "$MOB30P" ]; then
+function fugu-MOB30W {
+MOB30W="fugu-mob30w-factory-a9242814.zip"
+  if [ -f "$MOB30W" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-mob30p*.tgz
+    unzip fugu-mob30w*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd fugu-mob30p
+    cd fugu-mob30w
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf fugu-mob30p*
+    rm -rf fugu-mob30w*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -164,20 +155,20 @@ MOB30P="fugu-mob30p-factory-08696c8b.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/fugu-mob30p-factory-08696c8b.tgz
+    wget https://dl.google.com/dl/android/aosp/fugu-mob30w-factory-a9242814.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-mob30p*.tgz
+    unzip fugu-mob30w*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd fugu-mob30p
+    cd fugu-mob30w
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf fugu-mob30p*
+    rm -rf fugu-mob30w*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -185,22 +176,22 @@ MOB30P="fugu-mob30p-factory-08696c8b.tgz"
   fi
 }
 
-function fugu-NRD90M {
-NRD90M="fugu-nrd90m-factory-ecb8ca56.tgz"
-  if [ -f "$NRD90M" ]; then
+function fugu-NRD90R {
+NRD90R="fugu-nrd90r-factory-663a9f79.zip"
+  if [ -f "$NRD90R" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-nrd90m*.tgz
+    unzip fugu-nrd90r*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd fugu-nrd90m
+    cd fugu-nrd90r
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf fugu-nrd90m*
+    rm -rf fugu-nrd90r*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -208,20 +199,20 @@ NRD90M="fugu-nrd90m-factory-ecb8ca56.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/fugu-nrd90m-factory-ecb8ca56.tgz
+    wget https://dl.google.com/dl/android/aosp/fugu-nrd90r-factory-663a9f79.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf fugu-nrd90m*.tgz
+    unzip fugu-nrd90r*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd fugu-nrd90m
+    cd fugu-nrd90r
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf fugu-nrd90m*
+    rm -rf fugu-nrd90r*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -242,8 +233,8 @@ function images-fugu {
     fugu-LRX21V 'Lollipop 5.0' \
     fugu-LMY48N 'Lollipop 5.1.1' \
     fugu-MRA58N 'Marshmallow 6.0' \
-    fugu-MOB30P 'Marshmallow 6.0.1' \
-    fugu-NRD90M 'Nougat 7.0' \
+    fugu-MOB30W 'Marshmallow 6.0.1' \
+    fugu-NRD90R 'Nougat 7.0' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?

@@ -1,11 +1,11 @@
 #!/bin/bash
 
 function bullhead-MDB08M {
-MDB08M="bullhead-mdb08m-factory-5867cc27.tgz"
+MDB08M="bullhead-mdb08m-factory-9f8fb666.zip"
   if [ -f "$MDB08M" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead-mdb08m*.tgz
+    unzip bullhead-mdb08m*.zip
     # Install
     show_info 'Install Factory Images...'
     cd bullhead-mdb08m
@@ -23,10 +23,10 @@ MDB08M="bullhead-mdb08m-factory-5867cc27.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-5867cc27.tgz
+    wget https://dl.google.com/dl/android/aosp/bullhead-mdb08m-factory-9f8fb666.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead-mdb08m*.tgz
+    unzip bullhead-mdb08m*.zip
     # Install
     show_info 'Install Factory Images...'
     cd bullhead-mdb08m
@@ -44,22 +44,22 @@ MDB08M="bullhead-mdb08m-factory-5867cc27.tgz"
   fi
 }
 
-function bullhead-MHC19Q {
-MHC19Q="bullhead-mhc19q-factory-22ba5e5a.tgz"
-  if [ -f "$MHC19Q" ]; then
+function bullhead-MTC20K {
+MTC20K="bullhead-mtc20k-factory-4a950470.zip"
+  if [ -f "$MTC20K" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead-mhc19q*.tgz
+    unzip bullhead-mtc20k*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd bullhead-mhc19q
+    cd bullhead-mtc20k
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf bullhead-mhc19q*
+    rm -rf bullhead-mtc20k*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -67,20 +67,20 @@ MHC19Q="bullhead-mhc19q-factory-22ba5e5a.tgz"
   else
     # Download
     show_info 'Download ...'
-    wget https://dl.google.com/dl/android/aosp/bullhead-mhc19q-factory-22ba5e5a.tgz
+    wget https://dl.google.com/dl/android/aosp/bullhead-mtc20k-factory-4a950470.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead-mhc19q*.tgz
+    unzip bullhead-mtc20k*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd bullhead-mhc19q
+    cd bullhead-mtc20k
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf bullhead-mhc19q*
+    rm -rf bullhead-mtc20k*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -88,22 +88,22 @@ MHC19Q="bullhead-mhc19q-factory-22ba5e5a.tgz"
   fi
 }
 
-function bullhead-NRD90M {
-NRD90M="bullhead-nrd90m-factory-d215f148.tgz"
-  if [ -f "$NRD90M" ]; then
+function bullhead-NRD90S {
+NRD90S="bullhead-nrd90s-factory-d6bf1f56.zip"
+  if [ -f "$NRD90S" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead-nrd90m*.tgz
+    unzip bullhead-nrd90s*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd bullhead-nrd90m
+    cd bullhead-nrd90s
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf bullhead-nrd90m*
+    rm -rf bullhead-nrd90s*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -111,20 +111,20 @@ NRD90M="bullhead-nrd90m-factory-d215f148.tgz"
   else
     # Download
     show_info 'Download ...'
-    wget https://dl.google.com/dl/android/aosp/bullhead-nrd90m-factory-d215f148.tgz
+    wget https://dl.google.com/dl/android/aosp/bullhead-nrd90s-factory-d6bf1f56.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf bullhead-nrd90m*.tgz
+    unzip bullhead-nrd90s*.zip
     # Install
     show_info 'Install Factory Images...'
-    cd bullhead-nrd90m
+    cd bullhead-nrd90s
     ./flash-all.sh
     # Timeout
     sleep 5
     # Back
     cd -
     # Cleanup and finish
-    rm -rf bullhead-nrd90m*
+    rm -rf bullhead-nrd90s*
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -143,8 +143,8 @@ function images-bullhead {
     --cancel-button 'Go Back' \
   $LINES $COLUMNS $(( $LINES - 12 )) \
     bullhead-MDB08M 'Marshmallow 6.0' \
-    bullhead-MHC19Q 'Marshmallow 6.0.1' \
-    bullhead-NRD90M 'Nougat 7.0' \
+    bullhead-MTC20K 'Marshmallow 6.0.1' \
+    bullhead-NRD90S 'Nougat 7.0' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?

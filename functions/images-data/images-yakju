@@ -1,11 +1,11 @@
 #!/bin/bash
 
 function yakju-IMM76I {
-IMM76I="yakju-imm76i-factory-8001e72f.tgz"
+IMM76I="yakju-imm76i-factory-7e04639e.zip"
   if [ -f "$IMM76I" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf yakju-imm76i*.tgz
+    unzip yakju-imm76i*.zip
     # Install
     show_info 'Install Factory Images...'
     cd yakju-imm76i
@@ -23,10 +23,10 @@ IMM76I="yakju-imm76i-factory-8001e72f.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/yakju-imm76i-factory-8001e72f.tgz
+    wget https://dl.google.com/dl/android/aosp/yakju-imm76i-factory-7e04639e.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf yakju-imm76i*.tgz
+    unzip yakju-imm76i*.zip
     # Install
     show_info 'Install Factory Images...'
     cd yakju-imm76i
@@ -45,11 +45,11 @@ IMM76I="yakju-imm76i-factory-8001e72f.tgz"
 }
 
 function yakju-JZO54K {
-JZO54K="occam-ktu84p-factory-b6ac3ad6.tgz"
+JZO54K="yakju-jzo54k-factory-d75228cf.zip"
   if [ -f "$JZO54K" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf yakju-jzo54k*.tgz
+    unzip yakju-jzo54k*.zip
     # Install
     show_info 'Install Factory Images...'
     cd yakju-jzo54k
@@ -67,10 +67,10 @@ JZO54K="occam-ktu84p-factory-b6ac3ad6.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/yakju-jzo54k-factory-92ff9457.tgz
+    wget https://dl.google.com/dl/android/aosp/yakju-jzo54k-factory-d75228cf.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf yakju-jzo54k*.tgz
+    unzip yakju-jzo54k*.zip
     # Install
     show_info 'Install Factory Images...'
     cd yakju-jzo54k
@@ -89,11 +89,11 @@ JZO54K="occam-ktu84p-factory-b6ac3ad6.tgz"
 }
 
 function yakju-JDQ39 {
-JDQ39="yakju-jdq39-factory-b2ebb5f3.tgz"
+JDQ39="yakju-jdq39-factory-6f07b069.zip"
   if [ -f "$JDQ39" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf yakju-jdq39*.tgz
+    unzip yakju-jdq39*.zip
     # Install
     show_info 'Install Factory Images...'
     cd yakju-jdq39
@@ -111,10 +111,10 @@ JDQ39="yakju-jdq39-factory-b2ebb5f3.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/yakju-jdq39-factory-b2ebb5f3.tgz
+    wget https://dl.google.com/dl/android/aosp/yakju-jdq39-factory-6f07b069.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf yakju-jdq39*.tgz
+    unzip yakju-jdq39*.zip
     # Install
     show_info 'Install Factory Images...'
     cd yakju-jdq39
@@ -133,11 +133,11 @@ JDQ39="yakju-jdq39-factory-b2ebb5f3.tgz"
 }
 
 function yakju-JWR66Y {
-JWR66Y="yakju-jwr66y-factory-09207065.tgz"
+JWR66Y="yakju-jwr66y-factory-4cadea65.zip"
   if [ -f "$JWR66Y" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf yakju-jwr66y*.tgz
+    unzip yakju-jwr66y*.zip
     # Install
     show_info 'Install Factory Images...'
     cd yakju-jwr66y
@@ -155,10 +155,10 @@ JWR66Y="yakju-jwr66y-factory-09207065.tgz"
   else
     # Download
     show_info 'Download Factory Images...'
-    wget https://dl.google.com/dl/android/aosp/yakju-jwr66y-factory-09207065.tgz
+    wget https://dl.google.com/dl/android/aosp/yakju-jwr66y-factory-4cadea65.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf yakju-jwr66y*.tgz
+    unzip yakju-jwr66y*.zip
     # Install
     show_info 'Install Factory Images...'
     cd yakju-jwr66y
@@ -179,7 +179,7 @@ JWR66Y="yakju-jwr66y-factory-09207065.tgz"
 # Galaxy Nexus (GSM/HSPA+)
 function images-yakju {
   eval `resize`
-  NEXUS3=$(whiptail \
+  NEXUSGALAXY=$(whiptail \
     --notags \
     --title 'Galaxy Nexus (GSM/HSPA+)' \
     --menu '\nWhat is the firmware version you want to install?' \
@@ -194,7 +194,7 @@ function images-yakju {
 
 exitstatus=$?
   if [ $exitstatus = 0 ]; then
-    clear && $NEXUS3
+    clear && $NEXUSGALAXY
   else
     clear && main
   fi
