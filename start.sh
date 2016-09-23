@@ -43,39 +43,39 @@ echo -e "\033[0;37m$@\033[0m"
 
 # Main
 function main {
-    eval `resize`
-    MAIN=$(whiptail \
-        --notags \
-        --title "Nexus Toolkit" \
-        --menu "\nWhat would you like to do?" \
-        --ok-button "Run" \
-        --cancel-button "Quit" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        search 'Search devices' \
-        backup 'Backup/Restore' \
-        bootloader 'OEM Lock/Unlock' \
-        erase 'Erase sections' \
-        images 'Install Factory Images' \
-        recovery 'Install CWM/TWRP/Stock recovery' \
-        root 'Install Super SU' \
-        tools 'Other tools' \
-        3>&1 1>&2 2>&3)
+  eval `resize`
+  MAIN=$(whiptail \
+    --notags \
+    --title "Nexus Toolkit" \
+    --menu "\nWhat would you like to do?" \
+    --ok-button "Run" \
+    --cancel-button "Quit" \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    search 'Search devices' \
+    backup 'Backup/Restore' \
+    bootloader 'OEM Lock/Unlock' \
+    erase 'Erase sections' \
+    images 'Install Factory Images' \
+    recovery 'Install CWM/TWRP/Stock recovery' \
+    root 'Install Super SU' \
+    tools 'Other tools' \
+  3>&1 1>&2 2>&3)
 
-    exitstatus=$?
-    if [ $exitstatus = 0 ]; then
-        clear && $MAIN
-    else
-        clear && quit
-    fi
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $MAIN
+  else
+    clear && quit
+  fi
 }
 
 # Quit
 function quit {
-    if (whiptail --title "Quit" --yesno "Are you sure you want quit?" 10 60) then
-        exit 99
-    else
-        clear && main
-    fi
+  if (whiptail --title "Quit" --yesno "Are you sure you want quit?" 10 60) then
+    exit 99
+  else
+    clear && main
+  fi
 }
 
 # Run
