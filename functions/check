@@ -64,7 +64,7 @@ function check {
   # Positive action
   [Yy]* )
   show_warning 'Requires root privileges'
-  sudo apt-get --force-yes --yes install $package
+  sudo apt --force-yes --yes install $package
   show_success 'Done. Proceeding.'
   main
   ;;
@@ -97,7 +97,7 @@ function check {
   # Positive action
   [Yy]* )
   show_warning 'Requires root privileges'
-  sudo apt-get --force-yes --yes install $package
+  sudo apt --force-yes --yes install $package
   show_success 'Done. Proceeding.'
   main
   ;;
@@ -229,7 +229,7 @@ done
       # Positive action
       [Yy]* )
           show_warning 'Requires root privileges'
-          sudo apt-get --force-yes -y install $package
+          sudo apt --force-yes -y install $package
           # Failure check
           check_fail
           show_success "Package '$package' installed. Proceeding."

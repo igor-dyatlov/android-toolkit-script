@@ -55,8 +55,8 @@ function main {
     backup 'Backup/Restore' \
     bootloader 'OEM Lock/Unlock' \
     erase 'Erase sections' \
-    images 'Install Factory Images' \
-    recovery 'Install CWM/TWRP/Stock recovery' \
+    images 'Install Factory Images for Nexus and Pixel Devices' \
+    recovery 'Install TWRP recovery' \
     root 'Install Super SU' \
     tools 'Other tools' \
   3>&1 1>&2 2>&3)
