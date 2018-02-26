@@ -313,10 +313,11 @@ MOB30X="razor-mob30x-factory-52684dff.zip"
   if [ -f "$MOB30X" ]; then
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf razor-mob30x*.tgz
+    unzip razor-mob30x*.zip
     # Install
     show_info 'Install Factory Images...'
     cd razor-mob30x
+    ./flash-base.sh
     ./flash-all.sh
     # Timeout
     sleep 5
@@ -334,10 +335,11 @@ MOB30X="razor-mob30x-factory-52684dff.zip"
     wget https://dl.google.com/dl/android/aosp/razor-mob30x-factory-52684dff.zip
     # Extract
     show_info 'Extraction Factory Images...'
-    tar zxf razor-mob30x*.tgz
+    unzip razor-mob30x*.zip
     # Install
     show_info 'Install Factory Images...'
     cd razor-mob30x
+    ./flash-base.sh
     ./flash-all.sh
     # Timeout
     sleep 5

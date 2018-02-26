@@ -244,6 +244,7 @@ M4B30ZU="https://dl.google.com/dl/android/aosp/hammerhead-m4b30z-factory-625c027
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-m4b30z
+    ./flash-base.sh
     ./flash-all.sh
     # Timeout
     sleep 5
@@ -269,6 +270,7 @@ M4B30ZU="https://dl.google.com/dl/android/aosp/hammerhead-m4b30z-factory-625c027
     # Install
     show_info 'Install Factory Images...'
     cd hammerhead-m4b30z
+    ./flash-base.sh
     ./flash-all.sh
     # Timeout
     sleep 5

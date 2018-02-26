@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# SuperSU
+# 
 function root {
-  show_info 'Download Latest SuperSU...'
-  curl -O https://download.chainfire.eu/921/SuperSU/UPDATE-SuperSU-v2.65-20151226141550.zip?retrieve_file=1
-  show_info 'Extraction SuperSU...'
-  unzip UPDATE-SuperSU-*.zip
-  adb push ./UPDATE-SuperSU-v2.65-20151226141550.zip /sdcard/
+  show_info 'Download Latest ...'
+  
+  show_info 'Extraction ...'
+  unzip *.zip
+  adb push ./.zip /sdcard/
   adb reboot-bootloader
   sleep 5
   # Done

@@ -1,18 +1,201 @@
 #!/bin/bash
 
-# Authors:
-#   Igor Dyatlov <dyatlov.igor@gmail.com>
-#
-# Copyright 2016 The Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+function yakju-IMM76I {
+IMM76I="yakju-imm76i-factory-7e04639e.zip"
+  if [ -f "$IMM76I" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    unzip yakju-imm76i*.zip
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-imm76i
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-imm76i*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/yakju-imm76i-factory-7e04639e.zip
+    # Extract
+    show_info 'Extraction Factory Images...'
+    unzip yakju-imm76i*.zip
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-imm76i
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-imm76i*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function yakju-JZO54K {
+JZO54K="yakju-jzo54k-factory-d75228cf.zip"
+  if [ -f "$JZO54K" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    unzip yakju-jzo54k*.zip
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jzo54k
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jzo54k*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/yakju-jzo54k-factory-d75228cf.zip
+    # Extract
+    show_info 'Extraction Factory Images...'
+    unzip yakju-jzo54k*.zip
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jzo54k
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jzo54k*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function yakju-JDQ39 {
+JDQ39="yakju-jdq39-factory-6f07b069.zip"
+  if [ -f "$JDQ39" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    unzip yakju-jdq39*.zip
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jdq39
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jdq39*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/yakju-jdq39-factory-6f07b069.zip
+    # Extract
+    show_info 'Extraction Factory Images...'
+    unzip yakju-jdq39*.zip
+    # Install
+    show_info 'Install Factory Images...'
+    cd yakju-jdq39
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf yakju-jdq39*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+function takju-JWR66Y {
+JWR66Y="takju-jwr66y-factory-c042afa0.zip"
+  if [ -f "$JWR66Y" ]; then
+    # Extract
+    show_info 'Extraction Factory Images...'
+    unzip takju-jwr66y*.zip
+    # Install
+    show_info 'Install Factory Images...'
+    cd takju-jwr66y
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf takju-jwr66y*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  else
+    # Download
+    show_info 'Download Factory Images...'
+    wget https://dl.google.com/dl/android/aosp/takju-jwr66y-factory-c042afa0.zip
+    # Extract
+    show_info 'Extraction Factory Images...'
+    unzip takju-jwr66y*.zip
+    # Install
+    show_info 'Install Factory Images...'
+    cd takju-jwr66y
+    ./flash-all.sh
+    # Timeout
+    sleep 5
+    # Back
+    cd -
+    # Cleanup and finish
+    rm -rf takju-jwr66y*
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    images
+  fi
+}
+
+# Galaxy Nexus (GSM/HSPA+)
+function images-takju {
+  eval `resize`
+  NEXUSGALAXY=$(whiptail \
+    --notags \
+    --title 'Galaxy Nexus (GSM/HSPA+) (with Google Wallet)' \
+    --menu '\nWhat is the firmware version you want to install?' \
+    --ok-button 'Install' \
+    --cancel-button 'Go Back' \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    takju-IMM76I 'Ice Cream Sandwich 4.0.4 ' \
+    takju-JZO54K 'Jelly Bean 4.1.2 ' \
+    takju-JDQ39 'Jelly Bean 4.2.2 ' \
+    takju-JWR66Y 'Jelly Bean 4.3' \
+  3>&1 1>&2 2>&3)
+
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $NEXUSGALAXY
+  else
+    clear && main
+  fi
+}

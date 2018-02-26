@@ -1,0 +1,31 @@
+
+$RECOVERY=twrp-3.2.1-1-hammerhead.img
+
+function twrp-hammerhead {
+  # Download
+  show_info 'Download the latest TWRP image...'
+  wget --referer=https://dl.twrp.me/hammerhead/twrp-3.2.1-1-hammerhead.img.html https://dl.twrp.me/hammerhead/twrp-3.2.1-1-hammerhead.img
+  # Erasing old recovery
+  show_warning 'Erasing old recovery...'
+  fastboot erase recovery
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  show_info 'Flashing recovery...'
+  fastboot flash recovery $RECOVERY
+  show_success 'Done.'
+  # Reboot bootloader
+  show_warning 'Devices rebooting'
+  fastboot reboot-bootloader
+  # Timeout
+  sleep 5
+  # Cleanup and finish
+  rm $RECOVERY
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  recovery
+}

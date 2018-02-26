@@ -2,9 +2,7 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/recovery-data/cm
 source $dir/functions/recovery-data/cwm
-source $dir/functions/recovery-data/stock
 source $dir/functions/recovery-data/twrp
 
 # Install recovery
@@ -12,14 +10,12 @@ function recovery {
   eval `resize`
   RECOVERY=$(whiptail \
     --notags \
-    --title 'Install CWM/TWRP/Stock recovery' \
+    --title 'Install TWRP recovery' \
     --menu '\nWhat recovery would you like to install?' \
     --ok-button 'Install' \
     --cancel-button 'Go Back' \
   $LINES $COLUMNS $(( $LINES - 12 )) \
-    cm 'Cyanogen Recovery' \
     cwm 'CWM Recovery' \
-    stock 'Stock Recovery' \
     twrp 'TWRP Recovery' \
   3>&1 1>&2 2>&3)
 
